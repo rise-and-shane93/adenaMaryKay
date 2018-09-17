@@ -5,3 +5,119 @@ be used for the website:
 * {
     box-sizing: border-box;
 }
+
+/* BEGIN SMALL SCREEN QUERY */
+/*===============
+CODE COMMON TO ALL PAGES
+===============*/
+/* Footer */
+footer {
+    background-color: #373737;
+    color: white;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-media .fa {
+    width: 40px;
+    height: 40px;
+    font-size: 25px;
+    color: white;
+    background-color: #FF8B94;
+    border-radius: 50%;
+    transition: .2s ease-in-out;
+}
+.fa-instagram {
+    padding: 8px 9px;
+}
+.fa-facebook {
+    padding: 8px 12px;
+}
+.fa-linkedin {
+    padding: 8px 9px;
+}
+
+.social-media .fa:hover {
+    text-decoration: none;
+    background-color: #e75480;
+    transition: .2s ease-in-out;
+}
+
+/*===============
+HOME PAGE
+===============*/
+
+/*===============
+CONTACT PAGE
+===============*/
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0;
+}
+fieldset {
+    width: 95%;
+}
+input, textarea, 
+button[value="submit"] {
+    width: 100%;
+    border-radius: 5px;
+}
+input {
+    margin-bottom: 15px;
+}
+input, textarea {
+    transition: .3s ease-in-out;
+}
+input:focus,
+textarea:focus {
+    background-color: #FFC0CB;
+    outline: none;
+    transition: .3s ease-in-out;
+}
+textarea {
+    margin-bottom: 10px;
+}
+button[value="submit"] {
+    background-color: #FF8B94;
+    transition: .3s ease-in-out;
+}
+button[value="submit"]:hover {
+    background-color: #E75480;
+    transform: scale(1.01);
+    transition: .3s ease-in-out
+}
+
+
+
+/*END SMALL SCREEN QUERY*/
+
+@media (min-width: 768px) {
+    /*===============
+    CODE COMMON TO ALL PAGES
+    ===============*/
+    
+}
+
+/*END MEDIUM SCREEN QUERY*/
+
+@media (min-width: 1024px) {
+    /*===============
+    CODE COMMON TO ALL PAGES
+    ===============*/
+    footer {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    /*===============
+    CODE COMMON TO ALL PAGES
+    ===============*/
+    fieldset {
+        width: 65%;
+    }
+    
+}
