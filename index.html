@@ -11,7 +11,21 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-light navbar-expand-md fixed-top clearfix">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" href="#">Features</a>
+                    <a class="nav-item nav-link" href="#">Pricing</a>
+                    <a class="nav-item nav-link disabled" href="#">Disabled</a>
+                </div>
+            </div>
+        </nav>
+        <!-- <nav class="navbar navbar-light navbar-expand-md">
             <div class="container-fluid"><a class="navbar-brand" href="#">Brand</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse"
                     id="navcol-1">
@@ -24,7 +38,7 @@
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav> -->
     </header>
     <main>
         <div class="spacer">
@@ -36,14 +50,25 @@
                 <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
                 <p><a class="btn btn-primary" role="button" href="#">Learn more</a></p>
             </div><!--/jumbotron-->
+            <article id="maryKayQuote" class="d-flex flex-row">
+                <div class="dailyQuote">
+                    <div class="dailyQuoteText">
+                        <!--This is where the random daily quote will appear-->
+                    </div>
+                    <img src="images/maryKay2.jpg" alt="A photo of Mary Kay Ash" class="img-fluid clearfix">
+                </div>
+                <div class="quoteText">
+                </div>
+            </article>
+            <!--Think about putting the quote in the alt attribute. Include it in your script.-->
         </section><!--/sectionIntro-->
         <!--Here is where you would have a modal container for the various giveaways and announcements.
         You would have to modify the container so that it stretches the full width of the screen. Perhaps use a container-fluid-->
         <section id="#main-content">
             <div class="container">
                 <div class="row">
-                    <div class="col-12 col-md-6">
-                        <img src="images/placeholderWide.png" alt="image coming soon" title="Image coming soon!" class="img-fluid">
+                    <div class="col-12 col-md-6" data-toggle="modal" data-target="#calendly">
+                        <img src="images/calendar.jpg" alt="image coming soon" title="Image coming soon!" class="img-fluid">
                         <h4>Lorem Ipsum</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
                             eiusmod tempor incididunt ut labore et dolore magna aliqua. 
@@ -85,6 +110,29 @@
                             fugiat nulla pariatur.</p>
                     </div><!--/col-->
                 </div><!--/row-->
+                <!-- Button trigger modal -->  
+                <!-- Modal -->
+                <div class="modal fade" id="calendly" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Request an Appointment&#33;</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- Calendly inline widget begin -->
+                                <div class="calendly-inline-widget" data-url="https://calendly.com/serendipity/90" style="min-width:320px;height:580px;"></div>
+                                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
+                                <!-- Calendly inline widget end -->
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div><!--/modal-content-->
+                    </div><!--/modal-dialog-->
+                </div><!--/modal-->
             </div><!--/container-->
             <hr>
             <div class="container">
