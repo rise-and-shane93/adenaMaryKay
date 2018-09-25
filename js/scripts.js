@@ -1,24 +1,31 @@
+/*
 var $navbar = $('.navbar');
-var $upArrow = $('.up-arrow');
 var $navLink = $('.nav-link');
 var $navToggler = $('.navbar-toggler-icon');
+*/
+/*
+var $navbar = $('.navbar');
 
-//navbar expand/contract
+
+navbar expand/contract
 $(window).scroll(function(event) {
     if ($(this).scrollTop() > 200) {
-        // $navbar.css('background-color', 'black');
-        $navbar.addClass('scrolledNav');
+        $navbar.css('background-color', 'black');
+        $navbar.css('background-color', 'pink')
         $navLink.css('color', 'white');
         $navToggler.css('color', 'white');
     } else {
-        // $navbar.css('background-color', 'white');
-        $navbar.removeClass('scrolledNav');
+        $navbar.css('background-color', 'white');
+        $navbar.css('background-color', 'white')
         $navLink.css('color', 'black');
         $navToggler.css('color', 'black');
     }
 }); 
+*/
 
 //upArrow smooth scroll
+var $upArrow = $('.up-arrow');
+
 $(document).ready(function() {
     $(window).scroll(function(event) {
         $upArrow.css('opacity', '0');
@@ -80,14 +87,15 @@ var dailyQuote = document.querySelector('.dailyQuoteText');
 // var dailyQuote = document.querySelector('.quote');
 
 var mkQuotes = [
-    'Never give up, because you never know if the next try<br>is going to be the one that works.',
-    'The definition of successful people is simply<br>ordinary people with extraordinary determination.',
+    'Never give up, because you never know<br>if the next try is going to be<br>the one that works.',
+    'The definition of successful people is<br>simply ordinary people with<br>extraordinary determination.',
     'What you believe, you can achieve.',
-    'Don\'t limit yourself. Many people limit themselves<br>to what they think they can do.', 
-    'You can go as far as your mind lets you.<br>What you believe, remember you can achieve.',
-    'Don\'t let the negatives of life control you. Rise above them.<br>Use them as your stepping stones to go higher<br>than you ever dreamed possible.',
-    'Watching women achieve their dreams is the thing<br>that keeps me inspired.',
-    'If you act enthusiastic, you will become enthusiastic -<br>and it will spread like wildfire.'
+    'Don\'t limit yourself. Many people<br>limit themselves to what<br>they think they can do.', 
+    'You can go as far as your<br>mind lets you. What you believe, remember you can achieve.',
+    'Don\'t let the negatives of life control you.<br>Rise above them. Use them as your<br>stepping stones to go higher than you ever dreamed possible.',
+    'Watching women achieve<br>their dreams is the thing<br>that keeps me inspired.',
+    'If you act enthusiastic,<br>you will become enthusiastic -<br>and it will spread like wildfire.',
+    'We are not just selling cosmetics.<br>We are touching lives.'
 ];
 
 
