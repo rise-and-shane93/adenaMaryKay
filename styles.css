@@ -11,15 +11,14 @@ be used for the website:
 CODE COMMON TO ALL PAGES
 ===============*/
 /* Navbar */
-/* .navbar {
-    background-color: white !important;
+.navbar {
     height: 70px;
     transition: 200ms linear;
 }
 .scrolledNav {
-    background-color: pink;
+    background-color: #FE9A9A;
     transition: 200ms linear;
-} */
+}
 /* .navbar-collapse {
     width: 100%;
 } */
@@ -29,7 +28,7 @@ CODE COMMON TO ALL PAGES
 /* Spacer div */
 .spacer {
     width: 100%;
-    height: 56px;
+    height: 70px;
 }
 /* main {
     transform: translateY(56px);
@@ -74,22 +73,63 @@ footer {
 /*===============
 HOME PAGE
 ===============*/
-.dailyQuote {
-    width: 700px;
-    height: 300px;
-    background-color: #FE9A9A;
+/*----------
+Section main-content
+----------*/
+
+.modal-dialog {
+    max-width: 90vw;
+}
+/*Once you fix the quote image,
+you'll be able to specify this value.*/
+
+/*----------
+Section secondary-content
+----------*/
+#secondary-content {
+    background-color: #ffe4e1;
+}
+#maryKayQuote {
+    /* background-image: url('images/maryKay4.png');
+    background-size: cover; */
+    width: 70%;
+    height: 325px;
     position: relative;
 }
+/* .dailyQuote {
+    width: 100%;
+    height: 200px;
+    background-image: linear-gradient(90deg, #e75480 40%, #FE9A9A 60%); 
+    background-color: #FE9A9A;
+    position: relative;
+} */
 .dailyQuote img {
+    width: 100%;
     float: right;
+    /* height: 300px; */
 }
 .dailyQuoteText {
-    width: 300px;
-    height: 200px;
+    width: 330px;
+    /* height: 2px; */
     position: absolute;
-    /* left: 50px; */
-    top: 50%;
-    transform: translateY(-50%);
+    top: 15%;
+    left: 30%;
+    /* transform: translateX(-30px); */
+}
+.dailyQuoteText p {
+    margin-bottom: 0;
+}
+.dailyQuoteTextName {
+    margin-bottom: 0;
+    position: absolute;
+    left: 50%;
+    bottom: 50px;
+}/*fix the specifics later*/
+.dailyQuoteText, .dailyQuoteTextName {
+    background-color: rgba(255,218,185,0.5);
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 5px;
 }
 /* .quoteText {
     width: 500px;
@@ -101,6 +141,10 @@ HOME PAGE
     position: absolute;
     right: 0;
 } */
+/*----Modal Cards----*/
+div[data-toggle="modal"] {
+    cursor: pointer;
+}
 /*===============
 ABOUT PAGE
 ===============*/
@@ -200,6 +244,13 @@ button[value="submit"]:hover {
         box-shadow: 0px 5px 15px 0px #373737;
         transition: .2s ease-in-out;
     }
+    /*===============
+    HOME PAGE
+    ===============*/
+    .modal-dialog {
+        max-width: 700px;
+    }
+
     /*===============
     CONTACT PAGE
     ===============*/

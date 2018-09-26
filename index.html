@@ -16,9 +16,9 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse bg-light" id="navbarNavAltMarkup">
+            <div class="collapse navbar-collapse bg-danger" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link active" href="#">Home<span class="sr-only">(current)</span></a>
                     <a class="nav-item nav-link" href="#">Features</a>
                     <a class="nav-item nav-link" href="#">Pricing</a>
                     <a class="nav-item nav-link disabled" href="#">Disabled</a>
@@ -50,21 +50,11 @@
                 <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
                 <p><a class="btn btn-primary" role="button" href="#">Learn more</a></p>
             </div><!--/jumbotron-->
-            <article id="maryKayQuote" class="d-flex flex-row">
-                <div class="dailyQuote">
-                    <div class="dailyQuoteText">
-                        <!--This is where the random daily quote will appear-->
-                    </div>
-                    <img src="images/maryKay2.jpg" alt="A photo of Mary Kay Ash" class="img-fluid clearfix">
-                </div>
-                <div class="quoteText">
-                </div>
-            </article>
             <!--Think about putting the quote in the alt attribute. Include it in your script.-->
         </section><!--/sectionIntro-->
         <!--Here is where you would have a modal container for the various giveaways and announcements.
         You would have to modify the container so that it stretches the full width of the screen. Perhaps use a container-fluid-->
-        <section id="#main-content">
+        <section id="main-content">
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-md-6" data-toggle="modal" data-target="#calendly">
@@ -135,38 +125,51 @@
                 </div><!--/modal-->
             </div><!--/container-->
             <hr>
-            <div class="container">
-                <h1 class="text-center">Lorem Ipsum</h1>
-                <div class="row">
-                    <div class="col-12 col-md-6">
-                        <img src="images/placeholderWide.png" alt="image coming soon" title="Image coming soon!" class="img-fluid">
-                    </div><!--/col-->
-                    <div class="col-12 col-md-6">
-                        <h4>Lorem Ipsum</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-                            eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-                            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-                            reprehenderit in voluptate velit esse cillum dolore eu 
-                            fugiat nulla pariatur. </p>    
-                    </div><!--/col-->
-                </div><!--/row-->
-                <div class="row">
-                    <div class="col-12 col-md-6 order-1 order-lg-2">
-                        <img src="images/placeholderWide.png" alt="image coming soon" title="Image coming soon!" class="img-fluid">
-                    </div><!--/col-->
-                    <div class="col-12 col-md-6 order-2 order-lg-1">
-                        <h4>Lorem Ipsum</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-                            eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-                            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-                            reprehenderit in voluptate velit esse cillum dolore eu 
-                            fugiat nulla pariatur. </p>    
-                    </div><!--/col-->
-                </div><!--/row-->
-            </div><!--/container-->
         </section><!--/sectionMain-Content-->
+            <section id="secondary-content">
+                <div class="container d-flex flex-column align-items-center">
+                    <article id="maryKayQuote" class="d-flex flex-row my-5 clearfix">
+                        <div class="dailyQuoteText">
+                            <!-- This is where the random daily quote will appear -->
+                        </div>
+                        <div class="quoteBackgroundImage">
+                            <!-- This is where the random background image will appear. -->
+                        </div>
+                        <p class="dailyQuoteTextName">&#45;Mary Kay Ash</p>
+                    </article>
+                    <article id="news" class="my-3">
+                        <h1 class="text-center mb-4">Lorem Ipsum</h1>
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <img src="images/placeholderWide.png" alt="image coming soon" title="Image coming soon!" class="img-fluid">
+                            </div><!--/col-->
+                            <div class="col-12 col-md-6">
+                                <h4>Lorem Ipsum</h4>
+                                <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+                                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+                                    reprehenderit in voluptate velit esse cillum dolore eu 
+                                    fugiat nulla pariatur. </p>    
+                            </div><!--/col-->
+                        </div><!--/row-->
+                        <div class="row">
+                            <div class="col-12 col-md-6 order-1 order-lg-2">
+                                <img src="images/placeholderWide.png" alt="image coming soon" title="Image coming soon!" class="img-fluid">
+                            </div><!--/col-->
+                            <div class="col-12 col-md-6 order-2 order-lg-1">
+                                <h4>Lorem Ipsum</h4>
+                                <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+                                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+                                    reprehenderit in voluptate velit esse cillum dolore eu 
+                                    fugiat nulla pariatur. </p>    
+                            </div><!--/col-->
+                        </div><!--/row-->
+                    </article><!--/article-news-->
+                </div><!--/container-->
+            </section><!--/sectionSecondaryContent-->
         <div class="up-arrow">
             <i class="fa fa-angle-up"></i>
         </div>

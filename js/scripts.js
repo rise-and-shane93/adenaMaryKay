@@ -6,19 +6,13 @@ var $navToggler = $('.navbar-toggler-icon');
 /*
 var $navbar = $('.navbar');
 
-
 navbar expand/contract
+$navbar.addClass('bg-light');
 $(window).scroll(function(event) {
-    if ($(this).scrollTop() > 200) {
-        $navbar.css('background-color', 'black');
-        $navbar.css('background-color', 'pink')
-        $navLink.css('color', 'white');
-        $navToggler.css('color', 'white');
+    if ($(this).scrollTop() > 300) {
+        $navbar.removeClass('bg-light').addClass('scrolledNav').css('height', '56px');
     } else {
-        $navbar.css('background-color', 'white');
-        $navbar.css('background-color', 'white')
-        $navLink.css('color', 'black');
-        $navToggler.css('color', 'black');
+        $navbar.removeClass('scrolledNav').addClass('bg-light').css('height', '70px');
     }
 }); 
 */
@@ -83,8 +77,27 @@ var mkQuotes = [
     ['If you act enthusiastic, you will become enthusiastic - ', 'and it will spread like wildfire.']
 ];
 */
+//random quote background-image selector
+var quoteBackground = document.querySelector('.quoteBackgroundImage');
+var mkImages = [
+    'images/Untitled.png',
+    'images/Untitled2.png',
+    'images/maryKay3.jpg',
+    'images/maryKay4.png'
+];
+
+function getRandomImage() {
+    var img = '<img alt=\"An image of Mary Kay Ash.\" class=\"img-fluid\" src=\"';
+    var randomImg = Math.floor(Math.random() * mkImages.length);
+    img += mkImages[randomImg];
+    img += '\">';
+    return img;
+}
+
+quoteBackground.innerHTML = getRandomImage();
+
+//random quote selector
 var dailyQuote = document.querySelector('.dailyQuoteText');
-// var dailyQuote = document.querySelector('.quote');
 
 var mkQuotes = [
     'Never give up, because you never know<br>if the next try is going to be<br>the one that works.',
@@ -106,22 +119,18 @@ function getRandomQuote() {
     quote += '&#34;</p>';
     return quote;
 }
-/*
-function getRandomQuote() {
-    var quote = '';
-    var randomQuote = Math.floor(Math.random() * mkQuotes.length);
-    quote += mkQuotes[randomQuote];
-    return quote;
-}
-*/
 
 dailyQuote.innerHTML = getRandomQuote();
 
 var $quoteText = $('.dailyQuoteText');
-$quoteText.css({"opacity" : 0, "left" : 0});
+var $quoteTextName = $('.dailyQuoteTextName');
+
+$quoteText.css({"opacity" : 0, "left" : 100});
+$quoteTextName.hide();
 
 $(window).scroll(function(event) {
     if ($(this).scrollTop() > 150) {
-        $quoteText.animate({opacity: 1, left: 25}, 700);
+        $quoteText.animate({opacity: 1, left: 250}, 700);
+        $quoteTextName.fadeIn(700);
     }
-})
+});
