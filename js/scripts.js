@@ -79,22 +79,87 @@ var mkQuotes = [
 */
 //random quote background-image selector
 var quoteBackground = document.querySelector('.quoteBackgroundImage');
-var mkImages = [
+var mkImagesLarge = [
     'images/Untitled.png',
     'images/Untitled2.png',
     'images/maryKay3.jpg',
-    'images/maryKay4.png'
+    "images/maryKay4.png"
+];
+
+var mkImagesSmall = [
+    "images/quote.jpg",
+    "images/quote2.jpg",
+    "images/quote3.jpg",
+    "images/quote4.jpg",
+    "images/quote5.jpg",
+    "images/quote6.jpg",
+    "images/quote7.jpg",
+    "images/quote8.jpg",
+    "images/quote9.jpg",
+    "images/quote10.jpg",
+    "images/quote11.jpg",
+    "images/quote12.jpg",
+    "images/quote13.jpg",
+    "images/quote14.jpg",
+    "images/quote15.jpg",
+    "images/quote16.jpg",
+    "images/quote17.jpg"
 ];
 
 function getRandomImage() {
-    var img = '<img alt=\"An image of Mary Kay Ash.\" class=\"img-fluid\" src=\"';
-    var randomImg = Math.floor(Math.random() * mkImages.length);
-    img += mkImages[randomImg];
-    img += '\">';
+
+    // Creating an image tag is preferred over using a string.
+    const img = document.createElement('img');
+    img.alt = 'An image of Mary Key Ash';
+    img.classList.add('img-fluid');
+
+    let randomImg;
+    
+    let w = window.outerWidth;
+    
+    if (w >= 1000) {
+    
+         randomImg = Math.floor(Math.random() * mkImagesLarge.length);
+         
+         img.src = mkImagesLarge[randomImg];
+         
+    } else if (w <= 500) {
+    
+         randomImg = Math.floor(Math.random() * mkImagesSmall.length);
+         
+         img.src = mkImagesSmall[randomImg];
+         
+    }
+    
     return img;
 }
 
+// Add your image to the document so we can see it working.
+const quoteBackgroundImage = document.getElementsByClassName('quoteBackgroundImage')[0];
+
+quoteBackgroundImage.appendChild(getRandomImage());
+
+/*
+function getRandomImage() {
+    var img = '<img alt=\"An image of Mary Kay Ash.\" class=\"img-fluid\" src=\"';
+    var randomImg;
+    var w = window.innerWidth;
+    if (w => 1000) {
+        randomImg = Math.floor(Math.random() * mkImagesLarge.length);
+        img += mkImagesLarge[randomImg];
+        alert('large screen');
+    } else if (w < 500) {
+        randomImg = Math.floor(Math.random() * mkImagesSmall.length);
+        img += mkImagesSmall[randomImg];
+        alert('small screen');
+    }
+    img += '\">';
+    return img;
+};
+*/
 quoteBackground.innerHTML = getRandomImage();
+
+// alert(window.outerWidth);
 
 //random quote selector
 var dailyQuote = document.querySelector('.dailyQuoteText');
@@ -124,13 +189,34 @@ dailyQuote.innerHTML = getRandomQuote();
 
 var $quoteText = $('.dailyQuoteText');
 var $quoteTextName = $('.dailyQuoteTextName');
+var windowSize = $(window).width();
 
-$quoteText.css({"opacity" : 0, "left" : 100});
+if (windowSize > 1000) {
+    $quoteText.css({"opacity" : 0, "left" : 50});
+} else if (windowSize < 500) {
+    $quoteText.css({"opacity" : 0, "left" : -30});
+}
+
 $quoteTextName.hide();
 
 $(window).scroll(function(event) {
+    var windowSize = $(window).width();
     if ($(this).scrollTop() > 150) {
-        $quoteText.animate({opacity: 1, left: 250}, 700);
+        if (windowSize > 1000) {
+            $quoteText.animate({opacity: 1, left: 250}, 700);
+        } else if (windowSize < 500) {
+            $quoteText.animate({opacity: 1, left: -50}, 700);
+        }
         $quoteTextName.fadeIn(700);
     }
 });
+/*
+var windowSize = 
+
+$(window).resize(function() {
+    windowSize = $(window).width();
+    if (windowSize > 1000) {
+        $('.navbar').hide();
+    }
+});
+*/
