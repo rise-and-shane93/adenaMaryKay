@@ -105,7 +105,7 @@ var mkImagesSmall = [
     "images/quote16.jpg",
     "images/quote17.jpg"
 ];
-
+/*
 function getRandomImage() {
 
     // Creating an image tag is preferred over using a string.
@@ -115,49 +115,44 @@ function getRandomImage() {
 
     let randomImg;
     
-    let w = window.outerWidth;
+    let w = window.innerWidth;
     
     if (w >= 1000) {
     
-         randomImg = Math.floor(Math.random() * mkImagesLarge.length);
-         
-         img.src = mkImagesLarge[randomImg];
+        randomImg = Math.floor(Math.random() * mkImagesLarge.length);
+        
+        img.src = mkImagesLarge[randomImg];
+        alert("large screen");
          
     } else if (w <= 500) {
     
-         randomImg = Math.floor(Math.random() * mkImagesSmall.length);
-         
-         img.src = mkImagesSmall[randomImg];
-         
+        randomImg = Math.floor(Math.random() * mkImagesSmall.length);
+        
+        img.src = mkImagesSmall[randomImg];
+        alert("small screen");
+
     }
     
     return img;
-}
+}*/
 
 // Add your image to the document so we can see it working.
-const quoteBackgroundImage = document.getElementsByClassName('quoteBackgroundImage')[0];
+// const quoteBackgroundImage = document.getElementsByClassName('quoteBackgroundImage')[0];
 
-quoteBackgroundImage.appendChild(getRandomImage());
+// quoteBackgroundImage.appendChild(getRandomImage());
 
-/*
-function getRandomImage() {
-    var img = '<img alt=\"An image of Mary Kay Ash.\" class=\"img-fluid\" src=\"';
-    var randomImg;
-    var w = window.innerWidth;
-    if (w => 1000) {
-        randomImg = Math.floor(Math.random() * mkImagesLarge.length);
-        img += mkImagesLarge[randomImg];
-        alert('large screen');
-    } else if (w < 500) {
-        randomImg = Math.floor(Math.random() * mkImagesSmall.length);
-        img += mkImagesSmall[randomImg];
-        alert('small screen');
-    }
-    img += '\">';
-    return img;
-};
-*/
-quoteBackground.innerHTML = getRandomImage();
+
+
+// function getRandomImage() {
+//     var img = '<img alt=\"An image of Mary Kay Ash.\" class=\"img-fluid\" src=\"';
+//     var randomImg;
+//     randomImg = Math.floor(Math.random() * mkImagesLarge.length);
+//     img += mkImagesLarge[randomImg];
+//     img += '\">';
+//     return img;
+// };
+
+
 
 // alert(window.outerWidth);
 
@@ -178,18 +173,45 @@ var mkQuotes = [
 
 
 function getRandomQuote() {
-    var quote = '<p class="text-center">&#34;';
+    var quote = '<p class="text-center" class="quote-text">&#34;';
     var randomQuote = Math.floor(Math.random() * mkQuotes.length);
     quote += mkQuotes[randomQuote];
     quote += '&#34;</p>';
     return quote;
 }
 
-dailyQuote.innerHTML = getRandomQuote();
+// dailyQuote.innerHTML = getRandomQuote();
 
 var $quoteText = $('.dailyQuoteText');
+// var dailyQuoteText = document.querySelector('.dailyQuoteText');
 var $quoteTextName = $('.dailyQuoteTextName');
 var windowSize = $(window).width();
+
+function getRandomImage() {
+    var img = '<img alt=\"An image of Mary Kay Ash.\" class=\"img-fluid\" src=\"';
+    var randomImg;
+    if ( navigator.userAgent.match(/Android/i)
+        || navigator.userAgent.match(/webOS/i)
+        || navigator.userAgent.match(/iPhone/i)
+        || navigator.userAgent.match(/iPad/i)
+        || navigator.userAgent.match(/iPod/i)
+        || navigator.userAgent.match(/BlackBerry/i)
+        || navigator.userAgent.match(/Windows Phone/i)
+        ) {
+        // dailyQuote.innerHTML = getRandomQuote();
+        randomImg = Math.floor(Math.random() * mkImagesSmall.length);
+        img += mkImagesSmall[randomImg];
+    } else { 
+        dailyQuote.innerHTML = getRandomQuote();
+        randomImg = Math.floor(Math.random() * mkImagesLarge.length);
+        img += mkImagesLarge[randomImg];
+    }
+    img += '\">';
+    return img;
+}; 
+
+quoteBackground.innerHTML = getRandomImage();
+
 
 if (windowSize > 1000) {
     $quoteText.css({"opacity" : 0, "left" : 50});
@@ -198,16 +220,25 @@ if (windowSize > 1000) {
 }
 
 $quoteTextName.hide();
+var windowSize = $(window).width();
+if (windowSize > 1000) {
+    $quoteTextName.show();
+}
 
 $(window).scroll(function(event) {
     var windowSize = $(window).width();
     if ($(this).scrollTop() > 150) {
         if (windowSize > 1000) {
             $quoteText.animate({opacity: 1, left: 250}, 700);
+            $('.dailyQuoteText, .dailyQuoteTextName').css({'background-color' : 'rgba(255,218,185,0.5)', 
+                'border-top-left-radius' : '5px',
+                'border-bottom-right-radius' : '5px',
+                'padding' : '5px'
+            });
+            $quoteTextName.fadeIn(700);
         } else if (windowSize < 500) {
             $quoteText.animate({opacity: 1, left: -50}, 700);
         }
-        $quoteTextName.fadeIn(700);
     }
 });
 /*
