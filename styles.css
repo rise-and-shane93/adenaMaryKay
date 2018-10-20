@@ -83,6 +83,54 @@ Section main-content
 /*Once you fix the quote image,
 you'll be able to specify this value.*/
 
+/*---4 cards---*/
+#main-content .col-md-6 {
+    padding: 0;
+}
+
+/* .card {
+    position: relative;
+}
+
+.card img {
+    position: absolute;
+    z-index: 0;
+} */
+
+.card1, .card2 {
+    background-image: url('images/placeholderWide2.jpg');
+    background-size: cover;
+    width: 100%;
+    min-height: 249px;
+    max-height: 379px;
+}
+
+.card1:hover {
+
+}
+
+.card2 {
+}
+
+.card2:hover {
+
+}
+
+.card3 {
+}
+
+.card3:hover {
+
+}
+
+.card4 {
+}
+
+.card4:hover {
+
+}
+
+
 /*----------
 Section secondary-content
 ----------*/
@@ -198,6 +246,9 @@ button[value="submit"]:hover {
     /*===============
     CODE COMMON TO ALL PAGES
     ===============*/
+    /* .card1, .card2 {
+        height: 249px;
+    } */
     
 }
 
@@ -207,6 +258,11 @@ button[value="submit"]:hover {
     /*===============
     CODE COMMON TO ALL PAGES
     ===============*/
+    /* .card1, .card2 {
+        height: 379px;
+    } */
+
+
     footer {
         flex-direction: row;
         justify-content: space-between;

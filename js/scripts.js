@@ -37,46 +37,36 @@ $upArrow.click(function() {
     return false;
 });
 
-//random image selector
-/*
-var dailyQuote = document.querySelector('.dailyQuote');
+//hover over card effect
+var $card1 = $('.card1 img');
+var $card2 = $('.card2 img');
+var $card3 = $('.card3 img');
+var $card4 = $('.card4 img');
 
-var imageURLs = [
-    "images/quote.jpg",
-    "images/quote2.jpg",
-    "images/quote3.jpg",
-    "images/quote4.jpg",
-    "images/quote5.jpg",
-    "images/quote6.jpg",
-    "images/quote7.jpg",
-    "images/quote8.jpg",
-    "images/quote9.jpg"
-];
+$card1.hover(function() {
+    $card1.attr('src', 'images/placeholderWide3.jpg')
+}, function() {
+    $card1.attr('src', 'images/placeholderWide2.jpg')
+});
 
-function getRandomImage() {
-    var img = '<img src=\"';
-    var randomURL = Math.floor(Math.random() * imageURLs.length);
-    img += imageURLs[randomURL];
-    img += '\" alt=\"Some alt text\" class=\"img-fluid\">';
-    return img;
-};
+$card2.hover(function() {
+    $card2.attr('src', 'images/placeholderWide4.jpg')
+}, function() {
+    $card2.attr('src', 'images/placeholderWide3.jpg')
+});
 
-dailyQuote.innerHTML = getRandomImage();
-*/
-//random quote selector
-/*
-var mkQuotes = [
-    ['Never give up, because you never know if the ', 'next try is going to be the one that works.'],
-    ['The definition of successful people is simply ', 'ordinary people with extraordinary determination.'],
-    ['What you believe, you can achieve.'],
-    ['Don\'t limit yourself. Many people limit themselves ','to what they think they can do.', 
-    'You can go as far as your mind lets you. ', 'What you believe, remember you can achieve.'],
-    ['Don\'t let the negatives of life control you. Rise above them. ',
-    'Use them as your stepping stones to go higher', 'than you ever dreamed possible.'],
-    ['Watching women achieve their dreams is the thing', 'that keeps me inspired.'],
-    ['If you act enthusiastic, you will become enthusiastic - ', 'and it will spread like wildfire.']
-];
-*/
+$card3.hover(function() {
+    $card3.attr('src', 'images/placeholderWide5.jpg')
+}, function() {
+    $card3.attr('src', 'images/placeholderWide4.jpg')
+});
+
+$card4.hover(function() {
+    $card4.attr('src', 'images/placeholderWide2.jpg')
+}, function() {
+    $card4.attr('src', 'images/placeholderWide5.jpg')
+});
+
 //random quote background-image selector
 var quoteBackground = document.querySelector('.quoteBackgroundImage');
 var mkImagesLarge = [
