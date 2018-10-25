@@ -37,7 +37,7 @@ $upArrow.click(function() {
     return false;
 });
 
-//hover over card effect
+/*hover over card effect
 var $card1 = $('.card1 img');
 var $card2 = $('.card2 img');
 var $card3 = $('.card3 img');
@@ -66,7 +66,7 @@ $card4.hover(function() {
 }, function() {
     $card4.attr('src', 'images/placeholderWide5.jpg')
 });
-
+*/
 //random quote background-image selector
 var quoteBackground = document.querySelector('.quoteBackgroundImage');
 var mkImagesLarge = [
@@ -201,7 +201,6 @@ function getRandomImage() {
 }; 
 
 quoteBackground.innerHTML = getRandomImage();
-
 
 if (windowSize > 1000) {
     $quoteText.css({"opacity" : 0, "left" : 50});
