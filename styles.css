@@ -134,19 +134,19 @@ you'll be able to specify this value.*/
 }
 
 .home-card3 {
-    background-image: url('images/placeholderWide4.jpg');
+    background-image: url('images/card/hellofall.png');
 }
 
 .home-card3:hover {
-    background-image: url('images/placeholderWide5.jpg');
+    background-image: url('images/card/products2.jpg');
 }
 
 .home-card4 {
-    background-image: url('images/placeholderWide5.jpg');
+    background-image: url('images/card/products4.jpg');
 }
 
 .home-card4:hover {
-    background-image: url('images/placeholderWide2.jpg');
+    background-image: url('images/card/products.jpg');
 }
 
 .home-card-info {
