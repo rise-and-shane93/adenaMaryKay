@@ -212,8 +212,8 @@ Section secondary-content
 /*===============
 ABOUT PAGE
 ===============*/
-#about .container {
-    margin-top: 70px !important;
+#about {
+    background-color: #E0FFFF;
 }
 
 /*===============
