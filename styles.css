@@ -99,6 +99,14 @@ HOME PAGE
 /*-----Weather API-----*/
 .weather {
     background-color: white;
+    position: relative;
+    width: 15%;
+    min-width: 200px;
+}
+.weather .input {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: auto
 }
 .weatherUl {
     list-style-type: none;
