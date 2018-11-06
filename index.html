@@ -33,9 +33,20 @@
         </div>        
         <section id="intro">
             <div class="jumbotron">
-                <h1>Heading text</h1>
-                <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
-                <p><a class="btn btn-primary" role="button" href="#">Learn more</a></p>
+                <div class="jumbo-image">
+                    <h1>Heading text</h1>
+                    <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+                    <p><a class="btn btn-primary" role="button" href="#">Learn more</a></p>
+                </div><!--/jumbo-image-->
+                <div class="weather">
+                    <div class="input d-flex flex-row justify-content-space-around">
+                        <input type="text" name="zip" placeholder="30103">
+                        <button class="btn btn-danger">Go&#33;</button>
+                    </div>
+                    <!--This is where the weather API will go for testing purposes-->
+                    <ul class="weatherUl">
+                    </ul>
+                </div>
             </div><!--/jumbotron-->
             <!--Think about putting the quote in the alt attribute. Include it in your script.-->
         </section><!--/sectionIntro-->
@@ -118,6 +129,7 @@
             <section id="tertiary-content">
                 <div class="container">
                     <article id="news" class="py-3">
+                        <h3 class="text-center">Weather</h3>
                         <h1 class="text-center mb-4">Lorem Ipsum</h1>
                         <div class="row">
                             <div class="col-12 col-md-6">
@@ -167,6 +179,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/js/bootstrap.bundle.min.js"></script>
     <script src="js/scripts.js"></script>
+    <script src="js/weather.js"></script>
 </body>
 
 </html>
