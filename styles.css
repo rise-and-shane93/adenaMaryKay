@@ -112,6 +112,13 @@ HOME PAGE
     list-style-type: none;
     padding-left: 0;
 }
+.weather1 {
+    background-image: url('images/weather/sunny.png');
+    background-size: cover;
+    background-position: top;
+    height: 200px;
+
+}
 /* .input {
     width: 30%;
 } */
