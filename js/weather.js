@@ -1,10 +1,10 @@
-var weather = document.querySelector('.weather');
+var weather = document.querySelector('.weather1');
 var weatherUl = document.querySelector('.weatherUl');
 var zipInput = document.querySelector('.input input');
 var zipBtn = document.querySelector('.input button');
 var temp = document.createElement('li');
-var humidity = document.createElement('li');
-var pressure = document.createElement('li');
+//var humidity = document.createElement('li');
+//var pressure = document.createElement('li');
 var time = document.createElement('li');
 
 fetch(`https://api.openweathermap.org/data/2.5/weather?q=Adairsville,us&mode=json&units=imperial&APPID=c3d2c616c7f4d6abccb386c351d3a73d`).then(res => {
@@ -12,37 +12,55 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=Adairsville,us&mode=jso
 }).then(function(res) {
     // var degree = 40;
     temp.innerHTML = 'Temp: ' + res.main.temp + '&deg;F';
-    humidity.innerHTML = 'Humidity: ' + res.main.pressure;
-    pressure.innerHTML = 'Pressure: ' + res.main.humidity;
+    //humidity.innerHTML = 'Humidity: ' + res.main.pressure;
+    //pressure.innerHTML = 'Pressure: ' + res.main.humidity;
     var hour12 = convertTime12(res.dt);
     var hour24 = convertTime24(res.dt);
     console.log(hour24);
     time.innerHTML = 'Last updated at ' + hour12;
     weatherUl.appendChild(temp);
-    weatherUl.appendChild(humidity);
-    weatherUl.appendChild(pressure);
+    //weatherUl.appendChild(humidity);
+    //weatherUl.appendChild(pressure);
     weatherUl.appendChild(time);
-    //weather.style.backgroundImage = "url('" +  + "')'";
-    var imagePath;
-    var weatherBackgroundImage = "url('" + imagePath + "')";
-    /*
-    if (res.weather[0].main === 'Clear' && res.main.temp >= 50 && hour24 > 18) {
-        weather.style.backgroundImage = 'url(images/weather/night.png)';
-    } else if (res.weather[0].main === 'Clear' && res.main.temp < 50) {
-        weather.style.backgroundImage = 'url(images/weather/coldNight.png)';
-    }*/
     
     if (hour24 > 18 || hour24 < 6) {
-        imagePath += 'images/weather/night';
-        if (res.weather[0].main === 'Clear' && res.main.temp >= 50) {
-            imagePath += 'night.png';
+        //nighttime
+        if ((res.weather[0].main === 'Rain' || res.weather[0].main === 'Drizzle') && res.main.temp >= 50) {
+            //you probably won't have to worry about having the temperature in the condition
+            weather.style.backgroundImage = "url('images/weather/night/rainyNight2.png')";
+            console.log('night');
+        } else if ((res.weather[0].main === 'Clear' || res.weather[0].main === 'Cloudy')&& res.main.temp >= 50) {
+            weather.style.backgroundImage = "url('images/weather/night/night.png')";
+        } else if ((res.weather[0].main === 'Clear' || res.weather[0].main === 'Cloudy') && res.main.temp < 50) {
+            weather.style.backgroundImage = "url('images/weather/night/coldNight.png')";
         }
+        //you may have to add more conditions since I don't know how to access the library.
     } else if (hour24 >= 6 && hour24 < 11) {
-        imagePath += 'images/weather/morning';
+        //morning
+        if ((res.weather[0].main === 'Rain' || res.weather[0].main === 'Drizzle') && res.main.temp >= 50) {
+            //you probably won't have to worry about having the temperature in the condition
+            weather.style.backgroundImage = "url('images/weather/rainy2.png')";
+        } else if (res.weather[0].main === 'Clear' && res.main.temp >= 50) {
+            weather.style.backgroundImage = "url('images/weather/morning/morning3.png')";
+        } else if ((res.weather[0].main === 'Clear' || res.weather[0].main === 'Cloudy') && res.main.temp < 50) {
+            weather.style.backgroundImage = "url('images/weather/cold.png')";
+        } else if (res.weather[0].main === 'Cloudy' && res.main.temp >= 50) {
+            weather.style.backgroundImage = "url('images/weather/cloudy.png')";
+        }
     } else {
-        imagePath += 'images/weather/morning';
+        //afternoon
+        if ((res.weather[0].main === 'Rain' || res.weather[0].main === 'Drizzle') && res.main.temp >= 50) {
+            //you probably won't have to worry about having the temperature in the condition
+            weather.style.backgroundImage = "url('images/weather/rainy2.png')";
+        } else if (res.weather[0].main === 'Clear' && res.main.temp >= 50) {
+            weather.style.backgroundImage = "url('images/weather/afternoon/sunny.png')";
+        } else if ((res.weather[0].main === 'Clear' || res.weather[0].main === 'Cloudy') && res.main.temp < 50) {
+            weather.style.backgroundImage = "url('images/weather/cold.png')";
+        } else if (res.weather[0].main === 'Cloudy' && res.main.temp >= 50) {
+            weather.style.backgroundImage = "url('images/weather/cloudy.png')";
+        }
     }
-    
+    weather.style.backgroundSize = 'cover';
     /*
     if (hour24 > 18) {
         weather.style.backgroundImage = 'images/weather/night.png';
@@ -52,9 +70,10 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=Adairsville,us&mode=jso
     }
     */
     
-    console.log(weatherBackgroundImage);
+    //console.log(weatherBackgroundImage);
+    //console.log(imagePath);
 
-    weather.style.backgroundImage = weatherBackgroundImage; 
+    //weather.style.backgroundImage = weatherBackgroundImage; 
 });
 
 function convertTime24(timestamp) {
@@ -100,38 +119,3 @@ function convertTime12(timestamp) {
     var formattedTime12 = hours + ':' + minutes.substr(-2) + amPm;
     return formattedTime12;
 };
-
-zipBtn.addEventListener('click', function() {
-    var zip = zipInput.value;
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${zip},us&mode=json&units=imperial&APPID=c3d2c616c7f4d6abccb386c351d3a73d`).then(res => {
-        return res.json();
-    }).then(function(res) {
-        temp.innerHTML = 'Temp: ' + res.main.temp + '&deg;F';
-        humidity.innerHTML = 'Humidity: ' + res.main.pressure;
-        pressure.innerHTML = 'Pressure: ' + res.main.humidity;
-        weatherUl.appendChild(temp);
-        weatherUl.appendChild(humidity);
-        weatherUl.appendChild(pressure);
-    });
-});
-
-/*
-var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-        if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
-           if (xmlhttp.status == 200) {
-              var data = JSON.parse(xmlhttp.responseText);
-              //access json properties here
-              weather.append("Temperature: "+ data.main.temp);
-           }
-           else if (xmlhttp.status == 400) {
-              alert('There was an error 400');
-           }
-           else {
-               alert('something else other than 200 was returned');
-           }
-        }
-    };
-    xmlhttp.open("GET", "https://api.openweathermap.org/data/2.5/weather?q=Adairsville,us&mode=json&units=imperial&APPID=c3d2c616c7f4d6abccb386c351d3a73d", true);
-    xmlhttp.send();
-*/
