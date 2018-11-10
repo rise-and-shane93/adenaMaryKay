@@ -33,10 +33,14 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=Adairsville,us&mode=jso
             //you probably won't have to worry about having the temperature in the condition
             weather.style.backgroundImage = "url('images/weather/night/rainyNight.png')";
             console.log('night');
-        } else if ((res.weather[0].main === 'Clear' || res.weather[0].main === 'Cloudy')&& res.main.temp >= 50) {
+        } else if ((res.weather[0].main === 'Clear' || res.weather[0].main === 'Clouds' ||
+                    res.weather[0].main === 'Smoke' || res.weather[0].main === 'Haze') && res.main.temp >= 50) {
             weather.style.backgroundImage = "url('images/weather/night/night.png')";
-        } else if ((res.weather[0].main === 'Clear' || res.weather[0].main === 'Cloudy') && res.main.temp < 50) {
+        } else if ((res.weather[0].main === 'Clear' || res.weather[0].main === 'Clouds' ||
+                    res.weather[0].main === 'Mist' || res.weather[0].main === 'Haze') && res.main.temp < 50) {
             weather.style.backgroundImage = "url('images/weather/night/coldNight.png')";
+        } else if (res.weather[0].main === 'Snow') {
+            weather.style.backgroundImage = "url('images/weather/night/snowNight.png')";
         }
         //you may have to add more conditions since I don't know how to access the library.
     } else if (hour24 >= 6 && hour24 < 11) {
@@ -46,10 +50,15 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=Adairsville,us&mode=jso
             weather.style.backgroundImage = "url('images/weather/rainy2.png')";
         } else if (res.weather[0].main === 'Clear' && res.main.temp >= 50) {
             weather.style.backgroundImage = "url('images/weather/morning/morning3.png')";
-        } else if ((res.weather[0].main === 'Clear' || res.weather[0].main === 'Cloudy') && res.main.temp < 50) {
+        } else if ((res.weather[0].main === 'Clear' || res.weather[0].main === 'Clouds' ||
+                    res.weather[0].main === 'Mist' || res.weather[0].main === 'Smoke' ||
+                    res.weather[0].main === 'Haze') && res.main.temp < 50) {
             weather.style.backgroundImage = "url('images/weather/cold.png')";
-        } else if (res.weather[0].main === 'Cloudy' && res.main.temp >= 50) {
+        } else if ((res.weather[0].main === 'Clouds' || res.weather[0].main === 'Smoke' ||
+                    res.weather[0].main === 'Haze' || res.weather[0].main === 'Mist') && res.main.temp >= 50) {
             weather.style.backgroundImage = "url('images/weather/cloudy.png')";
+        } else if (res.weather[0].main === 'Snow') {
+            weather.style.backgroundImage = "url('images/weather/snow.png')";
         }
     } else {
         //afternoon
@@ -58,10 +67,14 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=Adairsville,us&mode=jso
             weather.style.backgroundImage = "url('images/weather/rainy2.png')";
         } else if (res.weather[0].main === 'Clear' && res.main.temp >= 50) {
             weather.style.backgroundImage = "url('images/weather/afternoon/sunny.png')";
-        } else if ((res.weather[0].main === 'Clear' || res.weather[0].main === 'Cloudy') && res.main.temp < 50) {
+        } else if ((res.weather[0].main === 'Clear' || res.weather[0].main === 'Clouds' ||
+                    res.weather[0].main === 'Mist') && res.main.temp < 50) {
             weather.style.backgroundImage = "url('images/weather/cold.png')";
-        } else if (res.weather[0].main === 'Cloudy' && res.main.temp >= 50) {
+        } else if ((res.weather[0].main === 'Clouds' || res.weather[0].main === 'Smoke' ||
+                    res.weather[0].main === 'Haze' || res.weather[0].main === 'Mist') && res.main.temp >= 50) {
             weather.style.backgroundImage = "url('images/weather/cloudy.png')";
+        } else if (res.weather[0].main === 'Snow') {
+            weather.style.backgroundImage = "url('images/weather/snow.png')";
         }
     }
     weather.style.backgroundSize = 'cover';
@@ -84,10 +97,11 @@ function convertTime12(timestamp) {
     var amPm = '';
     
     //sets the time in 12 hour format
-    if (hours > 12) {
-        // console.log('sleep');
+    if (hours >= 12) {
         amPm = ' PM';
-        hours -= 12;
+        if (hours > 13) {
+            hours -= 12;
+        }
     } else {
         amPm = ' AM';
     }
