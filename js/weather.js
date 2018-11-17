@@ -29,7 +29,7 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=Adairsville,us&mode=jso
     //Conditional-ception that sets the background image of the weather1 div based on the weather
     if (hour24 > 18 || hour24 < 6) {
         //nighttime
-        if ((res.weather[0].main === 'Rain' || res.weather[0].main === 'Drizzle') && res.main.temp >= 50) {
+        if ((res.weather[0].main === 'Rain' || res.weather[0].main === 'Drizzle')) {
             //you probably won't have to worry about having the temperature in the condition
             weather.style.backgroundImage = "url('images/weather/night/rainyNight.png')";
             console.log('night');
@@ -45,7 +45,7 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=Adairsville,us&mode=jso
         //you may have to add more conditions since I don't know how to access the library.
     } else if (hour24 >= 6 && hour24 < 11) {
         //morning
-        if ((res.weather[0].main === 'Rain' || res.weather[0].main === 'Drizzle') && res.main.temp >= 50) {
+        if ((res.weather[0].main === 'Rain' || res.weather[0].main === 'Drizzle')) {
             //you probably won't have to worry about having the temperature in the condition
             weather.style.backgroundImage = "url('images/weather/rainy2.png')";
         } else if (res.weather[0].main === 'Clear' && res.main.temp >= 50) {
@@ -62,7 +62,7 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=Adairsville,us&mode=jso
         }
     } else {
         //afternoon
-        if ((res.weather[0].main === 'Rain' || res.weather[0].main === 'Drizzle') && res.main.temp >= 50) {
+        if ((res.weather[0].main === 'Rain' || res.weather[0].main === 'Drizzle')) {
             //you probably won't have to worry about having the temperature in the condition
             weather.style.backgroundImage = "url('images/weather/rainy2.png')";
         } else if (res.weather[0].main === 'Clear' && res.main.temp >= 50) {
@@ -111,3 +111,40 @@ function convertTime12(timestamp) {
     var formattedTime12 = hours + ':' + minutes.substr(-2) + amPm;
     return formattedTime12;
 };
+
+//collapsable weather menu
+var $weatherData = $('.weather');
+var $buttonCollapseDiv = $('.buttonCollapse');
+var $buttonCollapse = $('.buttonCollapse button i');
+var $weatherArticle = $('#currentWeather');
+var $weatherArtInner = $('.weather1, #currentWeather p, #currentWeather img');
+$weatherArticle.css('width', '0px');
+$weatherArtInner.hide();
+
+
+//var collapsed = $weatherData.css('right', '-170px');
+
+/*
+$buttonCollapseDiv.click(function() {
+    if ($buttonCollapse.hasClass("fa-caret-left")) {
+        $weatherData.animate({right: '0'}, 1000);
+        $buttonCollapse.toggleClass('fa-caret-left fa-caret-right');
+    } else {
+        $weatherData.animate({right: '-170' + "px"}, 1000);
+        $buttonCollapse.toggleClass('fa-caret-left fa-caret-right');
+    }
+});
+*/
+
+$buttonCollapseDiv.click(function() {
+    if ($buttonCollapse.hasClass("fa-caret-left")) {
+        $weatherArticle.animate({width: '200' + 'px'}, 800);
+        $weatherArtInner.delay(800).show(100);
+        $buttonCollapse.toggleClass('fa-caret-left fa-caret-right');
+    } else {
+        $weatherArtInner.hide(100);
+        $weatherArticle.animate({width: '0' + "px"}, 800);
+        //$weatherArtInner.hide(100);
+        $buttonCollapse.toggleClass('fa-caret-left fa-caret-right');
+    }
+});

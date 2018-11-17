@@ -38,19 +38,26 @@
                     <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
                     <p><a class="btn btn-primary" role="button" href="#">Learn more</a></p>
                 </div><!--/jumbo-image-->
-                <div class="weather" title="Here's the current weather at Serendipity!">
+                <aside class="weather d-flex flex-row" title="Here's the current weather at Serendipity!">
                     <!--This is where the weather API will go for testing purposes-->
-                    <div class="weather1">
-                        <div class="weatherDesc">
-                        </div>    
-                    </div><!--/weather1-->
-                    <p>Weather data courtesy of&#58;</p>
-                    <img src="images/owMap.png" alt="logo of OpenWeatherMap" class="img-fluid">
-                    <!-- <div class="input d-flex flex-row justify-content-space-around">
-                        <input type="text" name="zip" placeholder="Zip Code">
-                        <button class="btn btn-danger">Search</button>
-                    </div> -->
-                </div>
+                    <div class="buttonCollapse d-flex flex-column align-items-center justify-content-center">
+                        <button class="btn btn-outline-danger align-self-center" style="border: none; padding: 0.5rem;">
+                            <i class="fa fa-caret-left" style="font-size: 3rem;"></i>
+                        </button>            
+                    </div>
+                    <article id="currentWeather">
+                        <div class="weather1">
+                            <div class="weatherDesc">
+                            </div>    
+                        </div><!--/weather1-->
+                        <p>Weather data courtesy of&#58;</p>
+                        <img src="images/owMap.png" alt="logo of OpenWeatherMap" class="img-fluid">
+                        <!-- <div class="input d-flex flex-row justify-content-space-around">
+                            <input type="text" name="zip" placeholder="Zip Code">
+                            <button class="btn btn-danger">Search</button>
+                        </div> -->
+                    </article>
+                </aside>
             </div><!--/jumbotron-->
             <!--Think about putting the quote in the alt attribute. Include it in your script.-->
         </section><!--/sectionIntro-->
