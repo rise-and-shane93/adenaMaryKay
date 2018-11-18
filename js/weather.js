@@ -118,8 +118,8 @@ var $buttonCollapseDiv = $('.buttonCollapse');
 var $buttonCollapse = $('.buttonCollapse button i');
 var $weatherArticle = $('#currentWeather');
 var $weatherArtInner = $('.weather1, #currentWeather p, #currentWeather img');
-$weatherArticle.css('width', '0px');
-$weatherArtInner.hide();
+$weatherArticle.css("width" , "0px");
+$weatherArtInner.fadeOut().hide();
 
 
 //var collapsed = $weatherData.css('right', '-170px');
@@ -139,10 +139,10 @@ $buttonCollapseDiv.click(function() {
 $buttonCollapseDiv.click(function() {
     if ($buttonCollapse.hasClass("fa-caret-left")) {
         $weatherArticle.animate({width: '200' + 'px'}, 800);
-        $weatherArtInner.delay(800).show(100);
+        $weatherArtInner.delay(800).show(100).fadeIn(1000);
         $buttonCollapse.toggleClass('fa-caret-left fa-caret-right');
     } else {
-        $weatherArtInner.hide(100);
+        $weatherArtInner.fadeOut(100).hide(100);
         $weatherArticle.animate({width: '0' + "px"}, 800);
         //$weatherArtInner.hide(100);
         $buttonCollapse.toggleClass('fa-caret-left fa-caret-right');
