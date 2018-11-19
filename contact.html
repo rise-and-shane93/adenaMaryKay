@@ -11,47 +11,62 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-danger fixed-top">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse bg-danger" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Pricing</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Contact</a></li>
-                </div><!--/navbar-nav-->
-            </div><!--/navbar-collapse-->
-        </nav>
-    </header>
-    <main>
-        <div class="spacer">
-            <p>Hello World</p>
-        </div>        
-        <section id="contact">     
-            <div class="pageTitle d-flex flex-column justify-content-center align-items-center mb-4">
-                <h1 class="text-center py-3">Contact</h1>
-                <!-- <img src="images/flowerUnderline.png" class="img-fluid" alt="an underline with a flower in it"> -->
-            </div>                   
-            <div class="container">
-                <form>
-                    <legend class="text-center">I would <strong>love</strong> to get in touch with you&#33;</legend>
-                    <fieldset>
-                        <input type="text" name="name" placeholder="Name*" required><br>
-                        <input type="text" name="email" placeholder="Email Address*" required><br>
-                        <textarea type="text" name="message" placeholder="Message" rows="5"></textarea>
-                        <button type="submit" value="submit" class="btn">Submit&#33;</button>
-                    </fieldset>
-                </form>
-            </div><!--/container-->
-        </section><!--/sectionContact-->
-    </main>
+    <div class="wrap">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-danger fixed-top">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse bg-danger" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="#">Pricing</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Contact</a></li>
+                    </div><!--/navbar-nav-->
+                </div><!--/navbar-collapse-->
+            </nav>
+        </header>
+        <main>
+            <div class="spacer">
+                <p>Hello World</p>
+            </div>        
+            <section id="contact">     
+                <div class="pageTitle d-flex flex-column justify-content-center align-items-center mb-4">
+                    <h1 class="text-center py-3">Contact</h1>
+                    <!-- <img src="images/flowerUnderline.png" class="img-fluid" alt="an underline with a flower in it"> -->
+                </div>              
+                <div class="container">
+                    <div class="vl"></div>
+                    <div class="row">
+                        <div class="col-12 col-lg-7">
+                            <form>
+                                <legend class="text-center">I would <strong>love</strong> to get in touch with you&#33;</legend>
+                                <fieldset>
+                                    <input type="text" name="name" placeholder="Name*" required><br>
+                                    <input type="text" name="email" placeholder="Email Address*" required><br>
+                                    <textarea type="text" name="message" placeholder="Message" rows="5"></textarea>
+                                    <button type="submit" value="submit" class="btn">Submit&#33;</button>
+                                </fieldset>
+                            </form>
+                        <hr>
+                        </div><!--/col-->
+                        <div class="col-12 col-lg-5">
+                            <article id="phoneNumber" class="d-flex flex-column justify-content-center align-items-center text-center">
+                                <h3 class="mb-4">Adena Harper,<br>Independent Sales Director</h3>
+                                <p class="mb-4" style="color: #A2A2A2;">Adena&#39;s Studio at Serendipity<br>Adairsville, GA</p>
+                                <p class="mb-4"><a href="tel:6788007031">&#40;678&#41; 800&#45;7031</a></p>
+                            </article>
+                        </div><!--/col-->
+                    </div><!--/row-->
+                </div><!--/container-->
+            </section><!--/sectionContact-->
+        </main>
+    </div><!--/wrap-->
     <footer>
         <h6 class="text-center">
-            &copy;2018, All Rights Reserved. Powered by <a href="https://webmarketsol.com/" target="_blank">Web Marketing Solutions, LLC.</a>
+            &copy;2018, All Rights Reserved.<br> Powered by <a href="https://webmarketsol.com/" target="_blank">Web Marketing Solutions, LLC.</a>
         </h6>
         <div class="social-media">
             <a class="fa fa-facebook" href="https://www.facebook.com/AdenaHarperMaryKay/" target="_blank"></a>
