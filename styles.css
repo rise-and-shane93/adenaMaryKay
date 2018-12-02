@@ -1,6 +1,8 @@
 /*
 The following color theme will
 be used for the website:
+
+#DC3545 for the navbar
 */
 * {
     box-sizing: border-box;
@@ -44,17 +46,117 @@ a:visited {
 }
 /* Navbar */
 .navbar {
-    height: 70px;
+    /* height: 100px; */
     transition: 200ms linear;
 }
 .scrolledNav {
     background-color: #FE9A9A;
     transition: 200ms linear;
 }
+.nav-link {
+    padding: 1rem;
+}
+.logo-image {
+    width: 100px;
+    transition: all .5s ease-in-out;
+    border-radius: 21% 79% 62% 38% / 50% 28% 72% 50% ;
+
+}
+/* .navbar-brand {
+    background-color: #fff0f5;
+    border-radius: 19% 81% 42% 58% / 65% 45% 55% 35%  ;
+} */
+/* Navbar collapse toggler button */
+
+.navbar-toggle {
+    position: relative;
+    width: 50px;
+    height: 35px;
+    padding: .25rem .73rem;
+}
+
+.icon-bar {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    content: "";
+    height: 2px;
+    background-color: #595959;
+    width: 60%;
+    border-radius: 5px;
+    transition: all 0.2s;
+}
+
+.top-bar {
+    top: 25%;
+}
+
+.middle-bar {
+    top: 50%;
+}
+
+.bottom-bar {
+    top: 75%;
+}
+
+/* .collapsed .top-bar {
+    transform: rotate(0);
+}
+
+.collapsed .middle-bar {
+    opacity: 1;
+}
+
+.collapsed .bottom-bar {
+    transform: rotate(0);
+} */
+
+/* .navbar-toggle {
+    border: none;
+    background: transparent !important;
+} */
+
+/* .navbar-toggle:hover {
+    background: transparent !important;
+}
+
+.navbar-toggle .icon-bar {
+    width: 22px;
+    transition: all 0.2s;
+} */
+
+/* .navbar-toggle .top-bar {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
+}
+.navbar-toggle .middle-bar {
+    opacity: 0;
+}
+.navbar-toggle .bottom-bar {
+    transform: rotate(-45deg);
+    transform-origin: 10% 90%;
+} */
+.menu-open .top-bar,
+.menu-open .bottom-bar {
+    left: 30%;
+}
+
+.menu-open .top-bar {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
+    /* transform: translateX(-25%); */
+}
+.menu-open .middle-bar {
+    opacity: 0;
+}
+.menu-open .bottom-bar {
+    transform: rotate(-45deg);
+    transform-origin: 10% 90%;
+}
 /* Spacer div */
 .spacer {
     width: 100%;
-    height: 70px;
+    height: 82px;
 }
 /* pageTitle */
 .pageTitle {
@@ -84,7 +186,7 @@ footer {
     left: 0;
     width: 100%; */
 }
-footer h6 {
+footer p {
     margin-bottom: 0;
 }
 
@@ -137,19 +239,50 @@ HOME PAGE
     justify-content: space-between;
     padding: 0;
     position: relative;
+    background: linear-gradient(rgba(255,139,148,0.4), rgba(255,139,148,0.4)), url('images/adenaPug.png') no-repeat center;
+    background-size: cover;
+    background-position: 50% 50%;
+    height: 50vh;
+    position: relative;
 }
-.jumbo-image {
+#jumbo-text {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 900;
+    width: 100%;
+}
+/* #jumbo-text h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+#jumbo-text p {
+    font-size: 2rem;
+} */
+/* .navbar {
+    opacity: 0.5;
+} */
+/* .jumbo-image {
     padding: 2rem 1rem;
-}
+} */
 
 /*-----Weather API-----*/
 .weather {
-    background-color: white;
+    /* background-color: white; */
     position: absolute;
     right: 0;
+    top: 50%;
+    transform: translateY(-50%);
     /* width: 200px; */
     cursor: default;
-    height: 100%;
+    height: 275px;
+}
+#currentWeather {
+    background-color: white;
+    border-top: 2px solid #e75480;
+    border-left: 2px solid #e75480;
+    border-bottom: 2px solid #e75480;
 }
 .weather .buttonCollapse {
     background-color: transparent;
@@ -232,11 +365,11 @@ you'll be able to specify this value.*/
 }
 
 .home-card2 {
-    background-image: url('images/card/adena3.png');
+    background-image: url('images/card/adena5.jpg');
 }
 
 .home-card3 {
-    background-image: url('images/card/products2.png');
+    background-image: url('images/card/helloDecember.jpg');
 }
 
 .home-card4 {
@@ -269,11 +402,17 @@ Section secondary-content
     background-size: cover;
     background-position: center;
 }
+#secondary-content .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
 #maryKayQuote {
     /* background-image: url('images/maryKay4.png');
     background-size: cover; */
     width: 70%;
-    height: 325px;
+    height: 242px;
     position: relative;
 }
 /* .dailyQuote {
@@ -303,6 +442,10 @@ Section secondary-content
     border-top-left-radius: 5px;
     border-bottom-right-radius: 5px;
     padding: 5px;
+    font-weight: 900;
+}
+.quoteBackgroundImage {
+    height: 242px;
 }
 /*
 .quoteText img {
@@ -313,12 +456,29 @@ Section secondary-content
 div[data-toggle="modal"] {
     cursor: pointer;
 }
+#ChristmasCountdown {
+    background-color: #DC143C;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border: 7px double #008000;
+}
+.xmasWait {
+    width: 200px;
+}
 
 /*----------
-Section secondary-content
+Section tertiary-content
 ----------*/
 #tertiary-content {
     background-color: #ffe4e1;
+}
+.spanLink {
+    color: #FF1493;
+    cursor: pointer;
+}
+.spanLink:hover {
+    text-decoration: underline;
+    text-decoration-color: #FF1493;
 }
 /*===============
 ABOUT PAGE
@@ -378,12 +538,20 @@ button[value="submit"] {
 button[value="submit"]:hover {
     background-color: #E75480;
     transform: scale(1.01);
-    transition: .3s ease-in-out
+    transition: .3s ease-in-out;
 }
 #phoneNumber {
     height: 100%;
 }
 
+/*===============
+THANK-YOU PAGE
+===============*/
+/*The thank-you page is a redirect page when 
+a user submits a form.*/
+#thank-you img {
+    width: 90%;
+}
 
 
 /*END SMALL SCREEN QUERY*/
@@ -398,12 +566,35 @@ button[value="submit"]:hover {
     .wrap {
         min-height: calc(100vh - 100px);
     }
+    .jumbotron {
+        height: 60vh;
+        background-position-x: 50%;
+    }
+    /*===============
+    HOME PAGE
+    ===============*/
+    /* .quoteBackgroundImage {
+        width: 250px;
+    } */
+    #secondary-content .container {
+        flex-direction: row;
+        justify-content: space-around;
+    }
     /*===============
     CONTACT PAGE
     ===============*/
     #contact .container {
         margin-bottom: 0;
     }
+    /*===============
+    THANK-YOU PAGE
+    ===============*/
+    /*The thank-you page is a redirect page when 
+    a user submits a form.*/
+    #thank-you img {
+        width: 60%;
+    }
+
 }
 
 /*END MEDIUM SCREEN QUERY*/
@@ -412,57 +603,96 @@ button[value="submit"]:hover {
     /*===============
     CODE COMMON TO ALL PAGES
     ===============*/
+    .jumbotron {
+        height: 100vh;
+    }
     /* navbar */
-    .navbar-nav .nav-link::before {
-        content: '';
-        display: block;
-        width: 0%;
-        top: -21px;
-        left: 0;
-        height: 7px;
-        border-bottom-left-radius: 5px;
-        border-bottom-right-radius: 5px;
-        background-color: #800000;
-        position: relative;
-        transition: all ease-in-out 250ms;
-    }
-    .navbar-nav .nav-link:hover::before {
-        width: 100%;
-    }
-    .navbar-nav .active::before {
-        content: '';
-        display: block;
-        width: 100%;
-        top: -21px;
-        border-radius: 0px;
-        left: 0;
-        height: 7px;
-        background-color: #373737;
+    /* .navbar {
+        opacity: 0.5;
+    } */
+    .navbar-nav a {
         position: relative;
     }
+
+    .nav-item a::before,
+    .nav-item a::after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 90px;
+        height: 90px;
+        border: 2px solid rgba(0,0,0,0.1);
+        border-radius: 50%;
+        content: '';
+        opacity: 0;
+        transition: transform 0.3s, opacity 0.3s;
+        transform: translateX(-50%) translateY(-50%) scale(0.2);
+    }
+
+    .nav-item a::after {
+        width: 80px;
+        height: 80px;
+        border-width: 6px;
+        transform: translateX(-50%) translateY(-50%) scale(0.8);
+    }
+
+    .nav-item a:hover::before,
+    .nav-item a:hover::after,
+    .nav-item a:focus::before,
+    .nav-item a:focus::after {
+        opacity: 1;
+        transform: translateX(-50%) translateY(-50%) scale(1);
+    }
+
     .navbar-nav .active {
-        font-weight: 900;
+        transform: scale(1.1);
     }
+
+    .navbar-nav .active::before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 90px;
+        height: 90px;
+        border: 2px solid rgba(0,0,0,0.1);
+        border-radius: 50%;
+        content: '';
+        opacity: 1;
+        transform: translateX(-50%) translateY(-50%) scale(0.2);
+    }
+
+    .nav-item .active::after {
+        opacity: 1;
+        width: 80px;
+        height: 80px;
+        border-width: 6px;
+        transform: translateX(-50%) translateY(-50%) scale(0.8);
+    }
+
+
     .nav-item {
         padding-left: 20px;
         padding-right: 20px;
-    } /*
-    .nav-item:last-child {
-        border: none;
-    }
-    .nav-item-active {
-        background-color: #800000;
-    }
-    .nav-link-active {
+        font-size: 1.3rem;
+        transition: all .5s ease-in-out;
         font-weight: 900;
-        background-color: #373737;
-        color: #FF8B94 !important;
     }
-    .nav-item:hover {
-        background-color: #B22222;
-        border-radius: 5px;
-        transition: .3s;
+
+    .nav-link {
+        color: #414141 !important;
+    }
+    
+    /* .navbar {
+        box-shadow: 0px 5px 15px 0px #000;
     } */
+
+    .navbar-toggle {
+        display: none !important;
+    }
+
+    .logo-image {
+        width: 200px;
+    }
     footer {
         flex-direction: row;
         justify-content: space-between;
@@ -516,6 +746,24 @@ button[value="submit"]:hover {
     }    
 
     /*----------
+    Jumbotron
+    -----------*/
+    #jumbo-text {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-weight: 900;
+    }
+    #jumbo-text h1 {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+    }
+    #jumbo-text p {
+        font-size: 2rem;
+    }
+    
+    /*----------
     section main-content
     ----------*/
     .home-card {
@@ -525,6 +773,7 @@ button[value="submit"]:hover {
         position: relative;
         transition: .4s;
     }
+    
     
     .home-card:hover {
         transition: .4s;
@@ -543,11 +792,11 @@ button[value="submit"]:hover {
     }
     
     .home-card2:hover {
-        background-image: url('images/card/adena3.png');
+        background-image: url('images/card/adena5.jpg');
     }
     
     .home-card3 {
-        background-image: url('images/card/hellofall.png');
+        background-image: url('images/card/helloDecember.jpg');
     }
     
     .home-card3:hover {
@@ -588,11 +837,22 @@ button[value="submit"]:hover {
     .home-card:hover .home-card-info {
         opacity: 1;
     }
+    /*---------------
+    section secondary-content
+    ---------------*/
+    #secondary-content .container {
+        flex-direction: row;
+    }
     /*---Daily Quote---*/
     .dailyQuoteText, .dailyQuoteTextName {
         display: block;
     }
-
+    #maryKayQuote {
+        height: 325px;
+    }
+    .quoteBackgroundImage {
+        height: 324px;
+    }    
     .dailyQuoteText {
         width: 330px;
         /* height: 2px; */
@@ -633,6 +893,15 @@ button[value="submit"]:hover {
     /* #phoneNumber {
         width: 35%;
     } */
+    /*===============
+    THANK-YOU PAGE
+    ===============*/
+    /*The thank-you page is a redirect page when 
+    a user submits a form.*/
+    #thank-you img {
+        width: 50%;
+    }
+
 
 }
 /*==========

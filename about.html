@@ -14,27 +14,34 @@
     <div class="wrap">
         <header>
             <nav class="navbar navbar-expand-lg navbar-light bg-danger fixed-top">
-                <a class="navbar-brand" href="#">Navbar</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/logo/banner.jpg" class="img-fluid logo-image" alt="The logo for Adena Harper's website">
+                </a>
+                <button class="navbar-toggler navbar-toggle d-flex flex-column justify-content-center align-items-center" 
+                type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" 
+                aria-expanded="false" aria-label="Toggle navigation">
+                    <!-- <span class="navbar-toggler-icon"></span> -->
+                    <span class="icon-bar top-bar"></span>
+                    <span class="icon-bar middle-bar"></span>
+                    <span class="icon-bar bottom-bar"></span>  
                 </button>
                 <div class="collapse navbar-collapse bg-danger" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
+                    <div class="navbar-nav ml-auto">
                         <li class="nav-item" role="presentation"><a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link active" href="#">About</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="#">Pricing</a></li>
+                        <!-- <li class="nav-item" role="presentation"><a class="nav-link" href="#">Pricing</a></li> -->
                         <li class="nav-item" role="presentation"><a class="nav-link" href="contact.html">Contact</a></li>
                     </div><!--/navbar-nav-->
                 </div><!--/navbar-collapse-->
             </nav>
         </header>
-        <main>
+        <main style="background-color: #F8F8FF;">
             <div class="spacer">
                 <p>Hello World</p>
             </div>
             <!--Here is where you would have a modal container for the various giveaways and announcements.
             You would have to modify the container so that it stretches the full width of the screen. Perhaps use a container-fluid-->
-            <section id="about">
+            <section id="thank-you" class="pb-5">
                 <div class="pageTitle d-flex flex-column justify-content-center align-items-center mb-4">
                     <h1 class="text-center py-3">About Me</h1>
                     <!-- <img src="images/flowerUnderline.png" class="img-fluid" alt="an underline with a flower in it"> -->
@@ -49,24 +56,26 @@
                         </div><!--/col-->
                         <div class="col-12 col-md-8">
                             <h4>My passion is to be a Fearless Role Model and Beauty Risk Taker!</h4>
-                            <p class="text-justify">I started my Mary Kay business in March 1998 while on a &#34;long term&#34; hiatus
-                                from my high pressure government job. For my husband John and I, it was important that
-                                I stayed at home with my two sons, Seth and Shane. I realized the importance of
-                                being the one to teach them how to read, which they did by the age of three.
-                                Despite having the college diplomas on the wall, I knew that I was doing exactly what
-                                I <span style="text-transform:uppercase;">loved</span> doing.</p>
-                            <p class="text-justify">However, I also discovered that I wanted to be known as &#34;Adena&#34; and not simply &#34;John&#39;s wife&#34;
-                                or &#34;Seth and Shane&#39;s mom.&#34; When someone shared with me the Mary Kay opportunity, I felt that
-                                this Career Opportunity would benefit not just me and my family, but the community as well.
-                                I began my career in Charleston, South Carolina. The next year we relocated to
-                                Georgia which was a new adventure for everyone to experience.  Seven moves in the next nine years
-                                kept us all very busy, but I knew that my Mary Kay business was always a priority.</p>
-                            <p class="text-justify">Having lived in Northwest Georgia for the past eleven years, my family and I are still close and
-                                enjoy spending time together. My mother, Velva, now lives with us at Serendipity
-                                in Adairsville, GA.</p>
-                            <p class="text-justify">Come and experience my home as well as My Home Studio!
-                            <a href="https://calendly.com/serendipity" target="_blank">Schedule your Consultation with me!</a><br>
-                            It will be an experience you will truly enjoy.</p>
+                            <div class="text-justify">
+                                <p>I started my Mary Kay business in March 1998 while on a &#34;long term&#34; hiatus
+                                    from my high pressure government job. For my husband John and I, it was important that
+                                    I stayed at home with my two sons, Seth and Shane. I realized the importance of
+                                    being the one to teach them how to read, which they did by the age of three.
+                                    Despite having the college diplomas on the wall, I knew that I was doing exactly what
+                                    I <span style="text-transform:uppercase;">loved</span> doing.</p>
+                                <p>However, I also discovered that I wanted to be known as &#34;Adena&#34; and not simply &#34;John&#39;s wife&#34;
+                                    or &#34;Seth and Shane&#39;s mom.&#34; When someone shared with me the Mary Kay opportunity, I felt that
+                                    this Career Opportunity would benefit not just me and my family, but the community as well.
+                                    I began my career in Charleston, South Carolina. The next year we relocated to
+                                    Georgia which was a new adventure for everyone to experience.  Seven moves in the next nine years
+                                    kept us all very busy, but I knew that my Mary Kay business was always a priority.</p>
+                                <p>Having lived in Northwest Georgia for the past eleven years, my family and I are still close and
+                                    enjoy spending time together. My mother, Velva, now lives with us at Serendipity
+                                    in Adairsville, GA.</p>
+                                <p>Come and experience my home as well as My Home Studio!
+                                <a href="https://calendly.com/serendipity" target="_blank">Schedule your Consultation with me!</a><br>
+                                It will be an experience you will truly enjoy.</p>
+                            </div><!--/text-justify-->
                         </div><!--/col-->
                     </div><!--/row-->
                 </div><!--/container-->
@@ -74,9 +83,13 @@
         </main>
     </div><!--//wrap-->
     <footer>
-        <h6>
-            &copy;2018, All Rights Reserved. Powered by <a href="https://webmarketsol.com/" target="_blank">Web Marketing Solutions, LLC.</a>
-        </h6>
+        <div>
+            <h6>
+                &copy;2018, All Rights Reserved. Powered by <a href="https://webmarketsol.com/" target="_blank">
+                Web Marketing Solutions, LLC.</a>
+            </h6>
+            <p>Logo courtesy of <a href="https://www.fiverr.com/hiramustafa1822/" target="_blank">Hita Mustafa</a></p>
+        </div>
         <div class="social-media">
             <a class="fa fa-facebook" href="https://www.facebook.com/AdenaHarperMaryKay/" target="_blank"></a>
             <a class="fa fa-instagram" href="#" target="_blank"></a>
@@ -88,5 +101,4 @@
     <script src="js/about.js"></script>
     <script src="js/scripts.js"></script>
 </body>
-
 </html>

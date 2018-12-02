@@ -17,7 +17,7 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=Adairsville,us&mode=jso
     //pressure.innerHTML = 'Pressure: ' + res.main.humidity;
     var hour12 = convertTime12(res.dt);
     var hour24 = convertTime24(res.dt);
-    console.log(hour24);
+    // console.log(hour24);
     time.innerHTML = 'Last updated<br>at ' + hour12;
     weatherDesc.appendChild(temp);
     //weatherUl.appendChild(humidity);
@@ -32,12 +32,14 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=Adairsville,us&mode=jso
         if ((res.weather[0].main === 'Rain' || res.weather[0].main === 'Drizzle')) {
             //you probably won't have to worry about having the temperature in the condition
             weather.style.backgroundImage = "url('images/weather/night/rainyNight.png')";
-            console.log('night');
+            // console.log('night');
         } else if ((res.weather[0].main === 'Clear' || res.weather[0].main === 'Clouds' ||
-                    res.weather[0].main === 'Smoke' || res.weather[0].main === 'Haze') && res.main.temp >= 50) {
+                    res.weather[0].main === 'Smoke' || res.weather[0].main === 'Haze' ||
+                    res.weather[0].main === 'Fog') && res.main.temp >= 50) {
             weather.style.backgroundImage = "url('images/weather/night/night.png')";
         } else if ((res.weather[0].main === 'Clear' || res.weather[0].main === 'Clouds' ||
-                    res.weather[0].main === 'Mist' || res.weather[0].main === 'Haze') && res.main.temp < 50) {
+                    res.weather[0].main === 'Mist' || res.weather[0].main === 'Haze' ||
+                    res.weather[0].main === 'Fog') && res.main.temp < 50) {
             weather.style.backgroundImage = "url('images/weather/night/coldNight.png')";
         } else if (res.weather[0].main === 'Snow') {
             weather.style.backgroundImage = "url('images/weather/night/snowNight.png')";
@@ -52,10 +54,11 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=Adairsville,us&mode=jso
             weather.style.backgroundImage = "url('images/weather/morning/morning3.png')";
         } else if ((res.weather[0].main === 'Clear' || res.weather[0].main === 'Clouds' ||
                     res.weather[0].main === 'Mist' || res.weather[0].main === 'Smoke' ||
-                    res.weather[0].main === 'Haze') && res.main.temp < 50) {
+                    res.weather[0].main === 'Haze' || res.weather[0].main === 'Fog') && res.main.temp < 50) {
             weather.style.backgroundImage = "url('images/weather/cold.png')";
         } else if ((res.weather[0].main === 'Clouds' || res.weather[0].main === 'Smoke' ||
-                    res.weather[0].main === 'Haze' || res.weather[0].main === 'Mist') && res.main.temp >= 50) {
+                    res.weather[0].main === 'Haze' || res.weather[0].main === 'Mist' ||
+                    res.weather[0].main === 'Fog') && res.main.temp >= 50) {
             weather.style.backgroundImage = "url('images/weather/cloudy.png')";
         } else if (res.weather[0].main === 'Snow') {
             weather.style.backgroundImage = "url('images/weather/snow.png')";
@@ -99,7 +102,7 @@ function convertTime12(timestamp) {
     //sets the time in 12 hour format
     if (hours >= 12) {
         amPm = ' PM';
-        if (hours > 13) {
+        if (hours >= 13) {
             hours -= 12;
         }
     } else {
@@ -118,9 +121,9 @@ var $buttonCollapseDiv = $('.buttonCollapse');
 var $buttonCollapse = $('.buttonCollapse button i');
 var $weatherArticle = $('#currentWeather');
 var $weatherArtInner = $('.weather1, #currentWeather p, #currentWeather img');
+
 $weatherArticle.css("width" , "0px");
 $weatherArtInner.fadeOut().hide();
-
 
 //var collapsed = $weatherData.css('right', '-170px');
 

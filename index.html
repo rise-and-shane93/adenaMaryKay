@@ -13,36 +13,47 @@
 <body>
     <div class="wrap">
         <header>
-            <nav class="navbar navbar-expand-lg navbar-light bg-danger fixed-top">
-                <a class="navbar-brand" href="#">Navbar</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+            <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+                <a class="navbar-brand" href="#">
+                    <img src="images/logo/banner.jpg" class="img-fluid logo-image" alt="The logo for Adena Harper's website">
+                    <!-- <p>Logo</p> -->
+                </a>
+                <button class="navbar-toggler navbar-toggle d-flex flex-column justify-content-center align-items-center" 
+                type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" 
+                aria-expanded="false" aria-label="Toggle navigation" onclick="backgroundColor()">
+                    <!-- <span class="navbar-toggler-icon"></span> -->
+                    <span class="icon-bar top-bar"></span>
+                    <span class="icon-bar middle-bar"></span>
+                    <span class="icon-bar bottom-bar"></span>  
                 </button>
-                <div class="collapse navbar-collapse bg-danger" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav ml-auto">
                         <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Home<span class="sr-only">(current)</span></a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="about.html">About</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="#">Pricing</a></li>
+                        <!-- <li class="nav-item" role="presentation"><a class="nav-link" href="#">Pricing</a></li> -->
                         <li class="nav-item" role="presentation"><a class="nav-link" href="contact.html">Contact</a></li>
                     </div><!--/navbar-nav-->
                 </div><!--/navbar-collapse-->
             </nav>
         </header>
         <main>
-            <div class="spacer">
-                <p>Hello World</p>
-            </div>        
+            <!-- <div class="spacer">
+                <p style="opacity: 0;">Hello World</p>
+            </div>         -->
             <section id="intro">
-                <div class="jumbotron">
+                <div class="jumbotron d-flex flex-column justify-content-center align-items-center text-center">
+                    <article id="jumbo-text">
+                        <h1>Hello, Gorgeous&#33;</h1>
+                        <p>My name is Adena Harper, and I am<br>an Independent Sales Director for<br>Mary Kay Cosmetics.</p>        
+                    </article>
                     <div class="jumbo-image">
-                        <h1>Heading text</h1>
-                        <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
-                        <p><a class="btn btn-primary" role="button" href="#">Learn more</a></p>
+                        <!-- <p><a class="btn btn-primary" role="button" href="#">Learn more</a></p> -->
+                        <!-- <img src="images/adenaJumbo.jpg" alt="Me and two associates at a Mary Kay event."> -->
                     </div><!--/jumbo-image-->
                     <aside class="weather d-flex flex-row" title="Here's the current weather at Serendipity!">
                         <!--This is where the weather API will go for testing purposes-->
                         <div class="buttonCollapse d-flex flex-column align-items-center justify-content-center">
-                            <button class="btn btn-outline-danger align-self-center" style="border: none; padding: 0.5rem;">
+                            <button class="btn btn-danger align-self-center" style="border: none; padding: 0.5rem;">
                                 <i class="fa fa-caret-left" style="font-size: 3rem;"></i>
                             </button>            
                         </div>
@@ -74,7 +85,7 @@
                             </div><!--/home-card-info-->
                         </div><!--/col-->
                         <div class="col-12 col-md-6 home-card home-card2">
-                            <a href="#">
+                            <a href="about.html">
                                 <div class="home-card-info info2">
                                     <!-- <h4>Lorem Ipsum</h4> -->
                                     <p class="text-center">Learn more about me here&#33;</p>
@@ -83,13 +94,13 @@
                         </div><!--/col-->
                     </div><!--/row-->
                     <div class="row">
-                        <div class="col-12 col-md-6 home-card home-card3">
-                            <a href="#">
+                        <div class="col-12 col-md-6 home-card home-card3" data-toggle="modal" data-target="#featuredProduct">
+                            <!-- <a href="#"> -->
                                 <div class="home-card-info info3">
                                     <!-- <h4>Lorem Ipsum</h4> -->
                                     <p class="text-center">Hello fall&#33; Click to view my<br>product spotlight of the season&#33;</p>
                                 </div><!--/home-card-info-->
-                            </a>
+                            <!-- </a> -->
                         </div><!--/col-->
                         <div class="col-12 col-md-6 home-card home-card4">
                             <a href="https://www.marykay.com/adena" target="_blank">
@@ -110,64 +121,112 @@
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
-                                </div>
+                                </div><!--/modal-header-->
                                 <div class="modal-body">
                                     <!-- Calendly inline widget begin -->
                                     <div class="calendly-inline-widget" data-url="https://calendly.com/serendipity/90" style="min-width:320px;height:580px;"></div>
                                     <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
                                     <!-- Calendly inline widget end -->
-                                </div>
+                                </div><!--/modal-body-->
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                </div>
+                                </div><!--/modal-footer-->
+                            </div><!--/modal-content-->
+                        </div><!--/modal-dialog-->
+                    </div><!--/modal-->
+                    <div class="modal fade" id="featuredProduct" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Product Spotlight&#33;</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div><!--/modal-header-->
+                                <div class="modal-body">
+                                    <!-- Featured Product -->
+                                    <h4 class="text-center">Mary Kay Chromafusion&trade;</h4>
+                                    <figure>
+                                        <img src="images/chromefusion.jpg" class="img-fluid" alt="Different shades of eye shadow product">
+                                        <figcaption style="font-size: .85rem;">Photo courtesy of Mary Kay&reg;</figcaption>
+                                    </figure>
+                                    <p>Check out this new collection&#33; Not only does Chromafusion&trade; last the entire day in multiple
+                                        weather conditions, but it also comes in different products&#33; 
+                                        <a href="https://www.marykay.com/adena/en-us/tips-and-trends/beauty-extras/discover-more/chromafusion-color?iad=hp_hero_chromafusion">
+                                            Click here
+                                        </a>
+                                        to check out what this amazing product has to offer&#33;
+                                        <!--I need to add more content but this will give me a general idea
+                                        as how to style this page-->
+                                    </p>
+                                </div><!--/modal-body-->
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div><!--/modal-footer-->
                             </div><!--/modal-content-->
                         </div><!--/modal-dialog-->
                     </div><!--/modal-->
                 </div><!--/container-->
             </section><!--/sectionMain-Content-->
-                <section id="secondary-content">
-                    <div class="container d-flex flex-column align-items-center">
+                <section id="secondary-content" class="py-5">
+                    <div class="container">
                         <article id="maryKayQuote" class="d-flex flex-row my-5 clearfix">
                             <div class="dailyQuoteText">
                                 <!-- This is where the random daily quote will appear -->
                             </div>
-                            <div class="quoteBackgroundImage">
+                            <div class="quoteBackgroundImage d-flex flex-column justify-content-center align-items-center">
                                 <!-- This is where the random background image will appear. -->
                             </div>
                             <p class="dailyQuoteTextName">&#45;Mary Kay Ash</p>
                         </article>
-                    </div>
+                        <article id="ChristmasCountdown">
+                            <img class="img-fluid xmasWait">
+                            <p class="text-center" style="font-size: 1.25rem; font-weight: 900;">
+                                <span class="countdown"></span> days 'til<br>Christmas&#33;</p>
+                        </article>
+                    </div><!--/container-->
                 </section>
                 <section id="tertiary-content">
                     <div class="container">
                         <article id="news" class="py-3">
-                            <h1 class="text-center mb-4">Lorem Ipsum</h1>
-                            <div class="row">
+                            <h1 class="text-center mb-4">Community Outreach</h1>
+                            <div class="row mb-5">
                                 <div class="col-12 col-md-6">
                                     <img src="images/mkFoundation1.jpg" alt="image coming soon" title="Image coming soon!" class="img-fluid">
                                 </div><!--/col-->
                                 <div class="col-12 col-md-6">
                                     <h4>The Mary Kay Foundation<span style="font-size: 0.2rem;">sm</span></h4>
-                                    <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-                                        eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-                                        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-                                        reprehenderit in voluptate velit esse cillum dolore eu 
-                                        fugiat nulla pariatur. </p>    
+                                    <p class="text-justify">Several Mary Kay&reg; Directors and I visited the GA Capitol building to bring 
+                                    awareness to domestic violence. This is an annual event hosted by <a href="https://www.marykayfoundation.org/"
+                                    target="_blank">The Mary Kay Foundation&trade;</a>, an 
+                                    organization whose missions center around eliminating cancer and domestic violence. Below is an excerpt of 
+                                    an email from Michelle Felix, a representative from Mary Kay's Office of Corporate Social Responsibility.
+                                    </p>
+                                    <div class="Felix-statement mx-4 text-justify">
+                                        <h5>&#34;Dear Mary Kay Directors,</h5>
+                                        <p>On behalf of the Corporate Social Responsibility team and the Public Affairs team, 
+                                            we want to thank you for attending Mary Kay’s Lobbying for Good program in Atlanta.
+                                            <span class="spanLink readMoreLink">Read more...</span></p>
+                                        <p class="readMoreText">We are so proud to have been able to bring together such a dynamic group 
+                                            of Mary Kay Directors, together in partnership with the Georgia Coalition Against Domestic Violence. 
+                                            Your presence made this event a great success and your enthusiasm and positive spirit 
+                                            helped us spread the message across the 
+                                            Capitol that love should not hurt.&#34; <span class="spanLink closeLink">&#40;Close&#41;</span></p>
+                                    </div><!--/Felix-statement-->
                                 </div><!--/col-->
                             </div><!--/row-->
                             <div class="row">
                                 <div class="col-12 col-md-6 order-1 order-lg-2">
-                                    <img src="images/placeholderWide.png" alt="image coming soon" title="Image coming soon!" class="img-fluid">
+                                    <img src="images/wandsForWildlife.jpg" alt="image coming soon" title="Image coming soon!" class="img-fluid">
                                 </div><!--/col-->
                                 <div class="col-12 col-md-6 order-2 order-lg-1">
-                                    <h4>Lorem Ipsum</h4>
-                                    <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-                                        eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-                                        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-                                        reprehenderit in voluptate velit esse cillum dolore eu 
-                                        fugiat nulla pariatur. </p>    
+                                    <h4>Wands for Wildlife<span style="font-size: .5rem;">&reg;</span></h4>
+                                    <p class="text-justify">I am excited to host a <em>Wandraiser</em> for Wands for Wildlife&reg;&#33;
+                                    I will be collecting used mascara wands and sending them to the Appalachian Wildlife Refuge. 
+                                    Old mascara wands are used to remove fly eggs and larva from the fur of wild animals. 
+                                    They work great because the bristles are close together. Recycle and save wild lives&#33;</p>
+                                    <p><a href="https://www.appalachianwild.org/wands-for-wildlife.html" target="_blank">Click here</a> for more details&#33;
+                                    The Wandraiser starts Saturday, December 1st.</p>
                                 </div><!--/col-->
                             </div><!--/row-->
                         </article><!--/article-news-->
@@ -179,9 +238,13 @@
         </main>
     </div><!--/wrap-->
     <footer>
-        <h6>
-            &copy;2018, All Rights Reserved. Powered by <a href="https://webmarketsol.com/" target="_blank">Web Marketing Solutions, LLC.</a>
-        </h6>
+        <div>
+            <h6>
+                &copy;2018, All Rights Reserved. Powered by <a href="https://webmarketsol.com/" target="_blank">
+                Web Marketing Solutions, LLC.</a>
+            </h6>
+            <p>Logo courtesy of <a href="https://www.fiverr.com/hiramustafa1822/" target="_blank">Hita Mustafa</a></p>
+        </div>
         <div class="social-media">
             <a class="fa fa-facebook" href="https://www.facebook.com/AdenaHarperMaryKay/" target="_blank"></a>
             <a class="fa fa-instagram" href="#" target="_blank"></a>
@@ -192,6 +255,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/js/bootstrap.bundle.min.js"></script>
     <script src="js/scripts.js"></script>
     <script src="js/weather.js"></script>
+    <script src="js/homePage.js"></script>
 </body>
 
 </html>
