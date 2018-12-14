@@ -185,6 +185,7 @@ footer {
     bottom: 0;
     left: 0;
     width: 100%; */
+    position: relative;
 }
 footer p {
     margin-bottom: 0;
@@ -228,6 +229,12 @@ footer p {
 }
 hr {
     margin: 2rem 0;
+}
+#siteseal {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 /*===============
 HOME PAGE
@@ -511,7 +518,7 @@ form {
 fieldset {
     width: 95%;
 }
-input, textarea, 
+input[type="text"], textarea, 
 button[value="submit"] {
     width: 100%;
     border-radius: 5px;
@@ -718,6 +725,7 @@ a user submits a form.*/
         justify-content: center;
         transition: .2s ease-in-out;
         cursor: pointer;
+        z-index: 1000;
     }
     .up-arrow i {
         margin-bottom: 5px;
