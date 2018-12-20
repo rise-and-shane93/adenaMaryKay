@@ -246,9 +246,9 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=Adairsville,us&mode=jso
     countdownP.textContent = countdown;
 
     //sets the bitmoji image based on the number of days until Christmas
-    if (countdown <= 24 || countdown >= 10) {
+    if (countdown <= 24 && countdown > 10) {
         countdownImg.src = 'images/waiting.png';
-    } else if (countdown <= 9 || countdown >= 1) {
+    } else if (countdown <= 10 && countdown >= 1) {
         countdownImg.src = 'images/excited.png';
     } else {
         countdownImg.src = 'images/weather/christmas.png';
