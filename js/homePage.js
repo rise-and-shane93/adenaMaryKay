@@ -226,8 +226,10 @@ closeLink.addEventListener('click', function() {
 compares it to the one for Christmas Day at 12 AM, then generates
 a countdown based off of that.*/
 var countdownArticle = document.querySelector('#ChristmasCountdown');
-var countdownP = document.querySelector('.countdown');
+var countdownP = document.querySelector('.countdownNum');
 var countdownImg = countdownArticle.querySelector('img');
+var countdownText = countdownArticle.querySelector('p');
+var countdownDesc = countdownArticle.querySelector('.countdownTxt');
 var currentTimestamp;
 
 fetch(`https://api.openweathermap.org/data/2.5/weather?q=Adairsville,us&mode=json&units=imperial&APPID=c3d2c616c7f4d6abccb386c351d3a73d`).then(res => {
@@ -239,31 +241,146 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=Adairsville,us&mode=jso
     /*calculates the number of days until Christmas
     the currentDate var is assigned the result of the timeConverter function*/
     var xmasDate = 25;
-    var currentDate = timeConverter(currentTimestamp);
-    var countdown = xmasDate - currentDate;
+    var currentDate = timeConverter(currentTimestamp).split(" ");
+    var day = parseInt(currentDate[0]);
+    var month = currentDate[1];
+    var countdown = xmasDate - day;
 
     //sets the countdown number to the article
     countdownP.textContent = countdown;
 
     //sets the bitmoji image based on the number of days until Christmas
-    if (countdown <= 24 && countdown > 10) {
-        countdownImg.src = 'images/waiting.png';
-    } else if (countdown <= 10 && countdown >= 1) {
-        countdownImg.src = 'images/excited.png';
+    if (month === 'Jan') {
+        if (day >= 1 && day <=7) {
+            countdownImg.src = 'images/newYear.png';
+            countdownText.style.display = 'none';
+        } else if (day === 21) {
+            countdownImg.src = 'images/mlkDay.png';
+            countdownText.innerHTML = 'Happy Martin<br>Luther King Jr. Day&#33;';
+        } else {
+            countdownArticle.style.display = 'none';
+        }
+    } else if (month === 'Feb') {
+        if (day === 5) {
+            countdownImg.src = 'images/chineseNY.png';
+            countdownText.innerHTML = 'Happy Chinese<br>New Year&#33;';
+        } else if (day === 14){
+            countdownImg.src = 'images/valentinesDay.png';
+            countdownText.textContent = 'Happy Valentine\'s Day!';
+        } else {
+            countdownArticle.style.display = 'none';
+        }
+    } else if (month === 'Mar') {
+        if (day === 5) {
+            countdownImg.src = 'images/mardiGras.png';
+            countdownText.textContent = 'Happy Mardi Gras!';
+        } else if (day === 17) {
+            countdownImg.src = 'images/stPatty.png';
+            countdownText.innerHTML = 'Happy St.<br>Patrick\'s Day&#33;';
+        } else {
+            countdownArticle.style.display = 'none';
+        }
+    } else if (month === 'Apr') {
+        if (day === 21) {
+            countdownImg.src = 'images/easter.png';
+            countdownText.textContent = 'Happy Easter Sunday!';
+        } else {
+            countdownArticle.style.display = 'none';
+        }
+    } else if (month === 'May') {
+        if (day === 2) {
+            countdownImg.src = 'images/prayer.png';
+            countdownText.innerHTML = 'Happy National<br>Day of Prayer';
+        } else if (day === 5) {
+            countdownImg.src = 'images/cincoDeMayo.png';
+            countdownText.innerHTML = 'Happy Cinco<br>de Mayo&#33;';
+        } else if (day === 12) {
+            countdownImg.src = 'images/mothersDay.png';
+            countdownText.textContent = 'Happy Mother\'s Day!';
+        } else if (day === 27) {
+            countdownImg.src = 'images/memorialDay.png';
+            countdownText.textContent = 'Happy Memorial Day!';
+        } else {
+            countdownArticle.style.display = 'none';
+        }
+    } else if (month === 'Jun') {
+        if (day === 14) {
+            countdownImg.src = 'images/flagDay.png';
+            countdownText.textContent = 'Happy Flag Day!';
+        } else if (day === 16) {
+            countdownImg.src = 'images/fathersDay.png';
+            countdownText.textContent = 'Happy Father\'s Day!';
+        } else {
+            countdownArticle.style.display = 'none';
+        }
+    } else if (month === 'Jul') {
+        if (day === 4) {
+            countdownImg.src = 'images/fourthJuly.png';
+            countdownText.textContent = 'Happy 4th of July!';
+        } else {
+            countdownArticle.style.display = 'none';
+        }
+    } else if (month === 'Aug') {
+        if (day === 26) {
+            countdownImg.src = 'images/womenEquality.png';
+            countdownText.innerHTML = 'Happy Women\'s<br>Equality Day&#33;';  
+        } else {
+            countdownArticle.style.display = 'none';
+        }
+    } else if (month === 'Sep') {
+        if (day === 2) {
+            countdownImg.src = 'images/laborDay.png';
+            countdownText.textContent = 'Happy Labor Day!';
+        } else {
+            countdownArticle.style.display = 'none';
+        }
+    } else if (month === 'Oct') {
+        if (day === 31) {
+            countdownImg.src = 'images/halloween.png';
+            countdownText.textContent = 'Happy Halloween!';
+        } else {
+            countdownArticle.style.display = 'none';
+        }
+    } else if (month === 'Nov') {
+        if (day === 11) {
+            countdownImg.src = 'images/veteransDay.png';
+            countdownText.textContent = 'Happy Veterans Day!';
+        } else if (day >= 22 && day <= 28) {
+            countdownImg.src = 'images/thanksgiving.png';
+            countdownText.textContent = 'Happy Thanksgiving!';
+        } else {
+            countdownArticle.style.display = 'none';
+        }
     } else {
-        countdownImg.src = 'images/weather/christmas.png';
-    }    
+        if (countdown <= 24 && countdown > 10) {
+            countdownImg.src = 'images/waiting.png';
+            countdownDesc.innerHTML = 'days \'til<br>Christmas&#33;';
+        } else if (countdown <= 10 && countdown >= 1) {
+            countdownImg.src = 'images/excited.png';
+            countdownDesc.innerHTML = 'days \'til<br>Christmas&#33;';
+        } else if (countdown === 0) {
+            countdownImg.src = 'images/weather/christmas.png';
+            countdownText.style.display = 'none';
+        } else if (day > xmasDate) {
+            countdownArticle.style.display = 'none';
+        } /*else if (currentDate === 31 || currentDate === 1) {
+            sets the background image to celebrate New Year's
+            I should probably set more countdowns for other holidays
+            countdownImg.src = 'images/newYear.png';
+        }*/    
+    }
 });
 
 function timeConverter(timestamp){
     var a = new Date(timestamp * 1000);
-    //var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
     //var year = a.getFullYear();
-    //var month = months[a.getMonth()];
+    var month = months[a.getMonth()];
     var date = a.getDate();
     //var hour = a.getHours();
     //var min = a.getMinutes();
     //var sec = a.getSeconds();
-    //var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
-    return date;
+    var time = date + ' ' + month;
+    // + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
+    return time;
 }
