@@ -16,7 +16,7 @@
         <header>
             <nav class="navbar navbar-expand-lg navbar-light bg-danger fixed-top">
                 <a class="navbar-brand" href="https://adenaharper.com/home">
-                    <img src="images/logo/ahLogo4.png" class="img-fluid logo-image" alt="The logo for Adena Harper's website">
+                    <img src="images/logo/ahLogo6.png" class="img-fluid logo-image" alt="The logo for Adena Harper's website">
                 </a>
                 <button class="navbar-toggler navbar-toggle d-flex flex-column justify-content-center align-items-center" 
                 type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" 
@@ -28,8 +28,8 @@
                 </button>
                 <div class="collapse navbar-collapse bg-danger" id="navbarNavAltMarkup">
                     <div class="navbar-nav ml-auto">
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="home">Home<span class="sr-only">(current)</span></a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="about">About</a></li>
                         <!-- <li class="nav-item" role="presentation"><a class="nav-link" href="#">Pricing</a></li> -->
                         <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Contact</a></li>
                     </div><!--/navbar-nav-->
@@ -56,10 +56,22 @@
                                     <input type="text" name="contact_email" placeholder="Email Address*" required><br>
                                     <textarea type="text" name="contact_message" placeholder="Message" rows="5"></textarea>
                                     <input type="checkbox" name="contact_checkbox" value="privacy-policy" required>
-                                    I agree to the <a href="privacyPolicy.html" target="_blank">terms of service</a>.
-                                    <button type="submit" value="submit" name="contact_form_submit" class="btn">Submit&#33;</button>
+                                    I agree to the <a href="privacyPolicy.html" target="_blank">terms of service</a>.<br>
+                                    <div class="security">
+                                        <label for="security_answer">What is <span class="securityQuestion"></span>&#63;</label>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <input type="text" name="security_answer" id="security_answer">
+                                            </div><!--/col-->
+                                            <div class="col-6">
+                                                <button type="save" value="Save Answer" id="save_answer" class="btn btn-danger">Save Answer</button>
+                                            </div><!--/col-->            
+                                        </div><!--/row-->
+                                    </div><!--securityAnswerDiv-->
+                                    <!-- <div class="g-recaptcha" data-callback="capcha_filled"
+                                    data-expired-callback="capcha_expired" data-sitekey="6LdqqYQUAAAAAK0vv_anvbjdFFgv53WC788XOhYc"></div>     -->
+                                    <button type="submit" value="submit" name="contact_form_submit" id="contact_form_submit" onClick="securityMath" class="btn">Submit&#33;</button>
                                 </fieldset>
-                                <div class="g-recaptcha" data-sitekey="6LdqqYQUAAAAAK0vv_anvbjdFFgv53WC788XOhYc"></div>
                             </form>
                         <hr>
                         </div><!--/col-->
@@ -93,6 +105,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/js/bootstrap.bundle.min.js"></script>
     <script src="js/scripts.js"></script>
+    <script src="js/contact.js"></script>
 </body>
 
 </html>
