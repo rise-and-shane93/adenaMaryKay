@@ -1,0 +1,26 @@
+{
+  "name": "adenamarykay",
+  "version": "1.0.0",
+  "description": "I am going to add a review section for mom's site",
+  "main": "weather.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rise-and-shane93/adenaMaryKay.git"
+  },
+  "author": "shane harper",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rise-and-shane93/adenaMaryKay/issues"
+  },
+  "homepage": "https://github.com/rise-and-shane93/adenaMaryKay#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  },
+  "dependencies": {
+    "browser-sync": "^2.26.5"
+  }
+}
